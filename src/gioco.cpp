@@ -1,6 +1,7 @@
 #include "gioco.h"
 
 #include <iostream>
+#include <fstream>
 
 #include "utilities.h"
 
@@ -384,10 +385,10 @@ void gioco::tempo()
 	if (mTempoRimanente <= 2)
 		printf("La nave e' scossa da vibrazioni.\n");
 	if (mTempoRimanente == 0) {
-		printf("\n*** Troppo tardi! ***\n\n");
-		printf("Il reattore e' fuori controllo.\n");
-		printf("L'astronave e' disintegrata in minuscoli frammenti\n");
-		printf("E' incredibile il silenzio delle esplosioni nel vuoto.\n");
+		print_colored("\n*** Troppo tardi! ***\n\n", 0x0C);
+		cout << "Il reattore e' fuori controllo.\n"
+			"L'astronave e' disintegrata in minuscoli frammenti\n"
+			"E' incredibile il silenzio delle esplosioni nel vuoto.\n";
 		morto();
 	}
 }
@@ -483,29 +484,27 @@ void gioco::guarda()
 
 void gioco::save()
 {
-	file = fopen(fStringa.c_str(), "w");
-	for (i = 1; i <= numeroOggetti; i++)
-		fprintf(file, "%d\n", oggetti[i].get_luogo());
-	fprintf(file, "%d\n", lu);
-	fprintf(file, "%d\n", mTempoRimanente);
-	fprintf(file, "%d\n", v1);
-	fprintf(file, "%d\n", v2);
-	fclose(file);
-	return;
+	std::ofstream file(mNomeFile, std::ios::trunc);
+	for (int i = 1; i <= numeroOggetti; i++)
+		file << oggetti[i].get_luogo() << std::endl;
+	file << lu << std::endl
+		<< mTempoRimanente << std::endl
+		<< v1 << std::endl
+		<< v2 << std::endl;
+	file.close();
 }
 
 void gioco::load()
 {
-	file = fopen(fStringa.c_str(), "r");
-	int l;
-	for (i = 1; i <= numeroOggetti; i++)
-		fscanf(file, "%d", &l), oggetti[i].set_luogo(l);
-	fscanf(file, "%d", &lu);
-	fscanf(file, "%d", &mTempoRimanente);
-	fscanf(file, "%d", &v1);
-	fscanf(file, "%d", &v2);
-	fclose(file);
-	return;
+	std::ifstream file(mNomeFile);
+	for (int i = 1; i <= numeroOggetti; i++)
+	{
+		int l;
+		file >> l;
+		oggetti[i].set_luogo(l);
+	}
+	file >> lu >> mTempoRimanente >> v1 >> v2;
+	file.close();
 }
 
 void gioco::cosa()

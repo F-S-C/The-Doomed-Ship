@@ -108,6 +108,5 @@ private:
 	int mLuogoAttuale;
 	std::string aStringa;
 
-	std::string fStringa = "astro";
-	FILE *file;
+	static constexpr char const *mNomeFile = "astro";
 };
