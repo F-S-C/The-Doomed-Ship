@@ -4,6 +4,8 @@
 
 #include "oggetto.h"
 #include "luogo.h"
+#include "comando.h"
+#include "azione.h"
 
 class gioco
 {
@@ -14,7 +16,7 @@ public:
 
 	int cerca_parola();
 	void estrai();
-	void cerca_azione();
+	int cerca_azione(int pAzioneCorrente);
 	void elenca();
 	void luogo_oggetto();
 	void pausa();
@@ -62,36 +64,34 @@ public:
 	void azione_38();
 	void esci();
 
-	void esegui();
-	void esegui_azione();
+	void esegui(int pAzioneCorrente);
+	int esegui_azione();
 
 private:
 	void init();
 
 	bool fine_partita;
 	bool riparti;
+
+	int numeroComandi;
+	int numeroLuoghi;
+	int numeroAzioni;
+	int numeroOggetti;
+
 	oggetto oggetti[50];
 	luogo luoghi[30];
+	comando comandi[100];
+	azione azioni[150];
 
 	//TODO: check
-	int fd;
-	int fm;
-	int fa;
-	int fo;
 
-	std::string dzStringa[100];
-	int dz[100];
-
-	int ca[150];
-	int az[150];
-
-	int t1;
+	int mTempoRimanente;
 	int lu;
 	int og;
 	int v1;
 	int v2;
 	int c;
-	int a;
+	int azioneCorrente;
 	int m;
 	int n;
 	int i;
@@ -105,7 +105,7 @@ private:
 	int n1, n2;
 	int li;
 	int in;
-	int l;
+	int mLuogoAttuale;
 	std::string aStringa;
 
 	std::string fStringa = "astro";

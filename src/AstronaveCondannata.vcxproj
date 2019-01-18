@@ -151,12 +151,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="azione.h" />
+    <ClInclude Include="comando.h" />
     <ClInclude Include="gioco.h" />
     <ClInclude Include="luogo.h" />
     <ClInclude Include="oggetto.h" />
     <ClInclude Include="utilities.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="azione.cpp" />
+    <ClCompile Include="comando.cpp" />
     <ClCompile Include="gioco.cpp" />
     <ClCompile Include="luogo.cpp" />
     <ClCompile Include="main.cpp" />

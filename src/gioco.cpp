@@ -14,164 +14,164 @@ gioco::gioco()
 void gioco::init()
 {
 	fine_partita = false;
-	fd = 0;
-	fm = 0;
-	fa = 0;
-	fo = 0;
+	numeroComandi = 0;
+	numeroLuoghi = 0;
+	numeroAzioni = 0;
+	numeroOggetti = 0;
 	printf("\nUn attimo di pazienza...\n");
 
-	dzStringa[++fd] = "a"; dz[fd] = 5;
-	dzStringa[++fd] = "aggiusta"; dz[fd] = 27;
-	dzStringa[++fd] = "alto"; dz[fd] = 5;
-	dzStringa[++fd] = "antenna"; dz[fd] = 69;
-	dzStringa[++fd] = "apri"; dz[fd] = 22;
-	dzStringa[++fd] = "armadietto"; dz[fd] = 67;
-	dzStringa[++fd] = "b"; dz[fd] = 6;
-	dzStringa[++fd] = "basso"; dz[fd] = 6;
-	dzStringa[++fd] = "bottone"; dz[fd] = 61;
-	dzStringa[++fd] = "camice"; dz[fd] = 52;
-	dzStringa[++fd] = "cartello"; dz[fd] = 60;
-	dzStringa[++fd] = "casco"; dz[fd] = 50;
-	dzStringa[++fd] = "chiave"; dz[fd] = 54;
-	dzStringa[++fd] = "cosa"; dz[fd] = 13;
-	dzStringa[++fd] = "e"; dz[fd] = 3;
-	dzStringa[++fd] = "est"; dz[fd] = 3;
-	dzStringa[++fd] = "etichetta"; dz[fd] = 70;
-	dzStringa[++fd] = "giallo"; dz[fd] = 63;
-	dzStringa[++fd] = "guarda"; dz[fd] = 10;
-	dzStringa[++fd] = "il"; dz[fd] = 7;
-	dzStringa[++fd] = "indicatore"; dz[fd] = 66;
-	dzStringa[++fd] = "indossa"; dz[fd] = 20;
-	dzStringa[++fd] = "inventario"; dz[fd] = 13;
-	dzStringa[++fd] = "l"; dz[fd] = 7;
-	dzStringa[++fd] = "la"; dz[fd] = 7;
-	dzStringa[++fd] = "lascia"; dz[fd] = 9;
-	dzStringa[++fd] = "leggi"; dz[fd] = 25;
-	dzStringa[++fd] = "letto"; dz[fd] = 68;
-	dzStringa[++fd] = "leva"; dz[fd] = 65;
-	dzStringa[++fd] = "lo"; dz[fd] = 7;
-	dzStringa[++fd] = "load"; dz[fd] = 12;
-	dzStringa[++fd] = "manuale"; dz[fd] = 55;
-	dzStringa[++fd] = "metti"; dz[fd] = 20;
-	dzStringa[++fd] = "n"; dz[fd] = 1;
-	dzStringa[++fd] = "nord"; dz[fd] = 1;
-	dzStringa[++fd] = "o"; dz[fd] = 4;
-	dzStringa[++fd] = "ovest"; dz[fd] = 4;
-	dzStringa[++fd] = "premi"; dz[fd] = 26;
-	dzStringa[++fd] = "prendi"; dz[fd] = 8;
-	dzStringa[++fd] = "pulsante"; dz[fd] = 61;
-	dzStringa[++fd] = "ripara"; dz[fd] = 27;
-	dzStringa[++fd] = "rosso"; dz[fd] = 64;
-	dzStringa[++fd] = "s"; dz[fd] = 2;
-	dzStringa[++fd] = "sali"; dz[fd] = 5;
-	dzStringa[++fd] = "save"; dz[fd] = 11;
-	dzStringa[++fd] = "scendi"; dz[fd] = 6;
-	dzStringa[++fd] = "schiaccia"; dz[fd] = 26;
-	dzStringa[++fd] = "secondo"; dz[fd] = 53;
-	dzStringa[++fd] = "spingi"; dz[fd] = 24;
-	dzStringa[++fd] = "sud"; dz[fd] = 2;
-	dzStringa[++fd] = "tira"; dz[fd] = 23;
-	dzStringa[++fd] = "togli"; dz[fd] = 21;
-	dzStringa[++fd] = "tuta"; dz[fd] = 51;
-	dzStringa[++fd] = "verde"; dz[fd] = 62;
-	dzStringa[++fd] = "w"; dz[fd] = 4;
+	comandi[++numeroComandi] = comando("a", 5);
+	comandi[++numeroComandi] = comando("aggiusta", 27);
+	comandi[++numeroComandi] = comando("alto", 5);
+	comandi[++numeroComandi] = comando("antenna", 69);
+	comandi[++numeroComandi] = comando("apri", 22);
+	comandi[++numeroComandi] = comando("armadietto", 67);
+	comandi[++numeroComandi] = comando("b", 6);
+	comandi[++numeroComandi] = comando("basso", 6);
+	comandi[++numeroComandi] = comando("bottone", 61);
+	comandi[++numeroComandi] = comando("camice", 52);
+	comandi[++numeroComandi] = comando("cartello", 60);
+	comandi[++numeroComandi] = comando("casco", 50);
+	comandi[++numeroComandi] = comando("chiave", 54);
+	comandi[++numeroComandi] = comando("cosa", 13);
+	comandi[++numeroComandi] = comando("e", 3);
+	comandi[++numeroComandi] = comando("est", 3);
+	comandi[++numeroComandi] = comando("etichetta", 70);
+	comandi[++numeroComandi] = comando("giallo", 63);
+	comandi[++numeroComandi] = comando("guarda", 10);
+	comandi[++numeroComandi] = comando("il", 7);
+	comandi[++numeroComandi] = comando("indicatore", 66);
+	comandi[++numeroComandi] = comando("indossa", 20);
+	comandi[++numeroComandi] = comando("inventario", 13);
+	comandi[++numeroComandi] = comando("l", 7);
+	comandi[++numeroComandi] = comando("la", 7);
+	comandi[++numeroComandi] = comando("lascia", 9);
+	comandi[++numeroComandi] = comando("leggi", 25);
+	comandi[++numeroComandi] = comando("letto", 68);
+	comandi[++numeroComandi] = comando("leva", 65);
+	comandi[++numeroComandi] = comando("lo", 7);
+	comandi[++numeroComandi] = comando("load", 12);
+	comandi[++numeroComandi] = comando("manuale", 55);
+	comandi[++numeroComandi] = comando("metti", 20);
+	comandi[++numeroComandi] = comando("n", 1);
+	comandi[++numeroComandi] = comando("nord", 1);
+	comandi[++numeroComandi] = comando("o", 4);
+	comandi[++numeroComandi] = comando("ovest", 4);
+	comandi[++numeroComandi] = comando("premi", 26);
+	comandi[++numeroComandi] = comando("prendi", 8);
+	comandi[++numeroComandi] = comando("pulsante", 61);
+	comandi[++numeroComandi] = comando("ripara", 27);
+	comandi[++numeroComandi] = comando("rosso", 64);
+	comandi[++numeroComandi] = comando("s", 2);
+	comandi[++numeroComandi] = comando("sali", 5);
+	comandi[++numeroComandi] = comando("save", 11);
+	comandi[++numeroComandi] = comando("scendi", 6);
+	comandi[++numeroComandi] = comando("schiaccia", 26);
+	comandi[++numeroComandi] = comando("secondo", 53);
+	comandi[++numeroComandi] = comando("spingi", 24);
+	comandi[++numeroComandi] = comando("sud", 2);
+	comandi[++numeroComandi] = comando("tira", 23);
+	comandi[++numeroComandi] = comando("togli", 21);
+	comandi[++numeroComandi] = comando("tuta", 51);
+	comandi[++numeroComandi] = comando("verde", 62);
+	comandi[++numeroComandi] = comando("w", 4);
 
 
-	luoghi[++fm] = luogo("nella cabina di pilotaggio", "000000000002");
-	luoghi[++fm] = luogo("ad un'estremita' del corridoio", "000300050100");
-	luoghi[++fm] = luogo("nel corridoio", "020400060000");
-	luoghi[++fm] = luogo("ad un'estremita' del corridoio", "030000070008");
-	luoghi[++fm] = luogo("nella cabina del secondo pilota", "000002000000");
-	luoghi[++fm] = luogo("nella tua cabina", "000003000000");
-	luoghi[++fm] = luogo("nel compartimento stagno", "000000000000");
-	luoghi[++fm] = luogo("nella sala controllo del reattore", "000000000400");
-	luoghi[++fm] = luogo("all'esterno, a prua dell'astronave", "001000000000");
-	luoghi[++fm] = luogo("all'esterno dell'astronave", "091100000000");
-	luoghi[++fm] = luogo("all'esterno, a poppa dell'astronave", "100007000000");
+	luoghi[++numeroLuoghi] = luogo("nella cabina di pilotaggio", "000000000002");
+	luoghi[++numeroLuoghi] = luogo("ad un'estremita' del corridoio", "000300050100");
+	luoghi[++numeroLuoghi] = luogo("nel corridoio", "020400060000");
+	luoghi[++numeroLuoghi] = luogo("ad un'estremita' del corridoio", "030000070008");
+	luoghi[++numeroLuoghi] = luogo("nella cabina del secondo pilota", "000002000000");
+	luoghi[++numeroLuoghi] = luogo("nella tua cabina", "000003000000");
+	luoghi[++numeroLuoghi] = luogo("nel compartimento stagno", "000000000000");
+	luoghi[++numeroLuoghi] = luogo("nella sala controllo del reattore", "000000000400");
+	luoghi[++numeroLuoghi] = luogo("all'esterno, a prua dell'astronave", "001000000000");
+	luoghi[++numeroLuoghi] = luogo("all'esterno dell'astronave", "091100000000");
+	luoghi[++numeroLuoghi] = luogo("all'esterno, a poppa dell'astronave", "100007000000");
 
 
-	ca[++fa] = 100; az[fa] = 1;
-	ca[++fa] = 200; az[fa] = 1;
-	ca[++fa] = 300; az[fa] = 1;
-	ca[++fa] = 400; az[fa] = 1;
-	ca[++fa] = 500; az[fa] = 1;
-	ca[++fa] = 600; az[fa] = 1;
-	ca[++fa] = 899; az[fa] = -2;
-	ca[++fa] = 950; az[fa] = -10;
-	ca[++fa] = 951; az[fa] = -10;
-	ca[++fa] = 999; az[fa] = 3;
-	ca[++fa] = 1051; az[fa] = -11;
-	ca[++fa] = 1052; az[fa] = -14;
-	ca[++fa] = 1053; az[fa] = -12;
-	ca[++fa] = 1055; az[fa] = -13;
-	ca[++fa] = 1060; az[fa] = -13;
-	ca[++fa] = 1099; az[fa] = -4;
-	ca[++fa] = 1100; az[fa] = 5;
-	ca[++fa] = 1200; az[fa] = 6;
-	ca[++fa] = 1300; az[fa] = 7;
-	ca[++fa] = 2050; az[fa] = -2;
-	ca[++fa] = 2051; az[fa] = -2;
-	ca[++fa] = 2052; az[fa] = -2;
-	ca[++fa] = 2150; az[fa] = -10;
-	ca[++fa] = 2151; az[fa] = -10;
-	ca[++fa] = 2152; az[fa] = -3;
-	ca[++fa] = 2255; az[fa] = -15;
-	ca[++fa] = 2555; az[fa] = -15;
-	ca[++fa] = 2769; az[fa] = -29;
-	ca[++fa] = 6550; az[fa] = -10;
-	ca[++fa] = 6551; az[fa] = -10;
-	ca[++fa] = 6552; az[fa] = -3;
-	ca[++fa] = 11066; az[fa] = 16;
-	ca[++fa] = 12570; az[fa] = 17;
-	ca[++fa] = 12661; az[fa] = 18;
-	ca[++fa] = 20300; az[fa] = 21;
-	ca[++fa] = 20500; az[fa] = 20;
-	ca[++fa] = 22560; az[fa] = 19;
-	ca[++fa] = 30300; az[fa] = 21;
-	ca[++fa] = 40300; az[fa] = 21;
-	ca[++fa] = 42560; az[fa] = 22;
-	ca[++fa] = 52267; az[fa] = 23;
-	ca[++fa] = 62267; az[fa] = 24;
-	ca[++fa] = 70300; az[fa] = 37;
-	ca[++fa] = 70400; az[fa] = 38;
-	ca[++fa] = 72661; az[fa] = 25;
-	ca[++fa] = 72662; az[fa] = 27;
-	ca[++fa] = 72664; az[fa] = 26;
-	ca[++fa] = 81066; az[fa] = 16;
-	ca[++fa] = 82365; az[fa] = 35;
-	ca[++fa] = 82465; az[fa] = 34;
-	ca[++fa] = 82560; az[fa] = 28;
-	ca[++fa] = 82661; az[fa] = 30;
-	ca[++fa] = 82662; az[fa] = 33;
-	ca[++fa] = 82663; az[fa] = 32;
-	ca[++fa] = 82664; az[fa] = 31;
-	ca[++fa] = 91069; az[fa] = 36;
+	azioni[++numeroAzioni] = azione(100, 1);
+	azioni[++numeroAzioni] = azione(200, 1);
+	azioni[++numeroAzioni] = azione(300, 1);
+	azioni[++numeroAzioni] = azione(400, 1);
+	azioni[++numeroAzioni] = azione(500, 1);
+	azioni[++numeroAzioni] = azione(600, 1);
+	azioni[++numeroAzioni] = azione(899, -2);
+	azioni[++numeroAzioni] = azione(950, -10);
+	azioni[++numeroAzioni] = azione(951, -10);
+	azioni[++numeroAzioni] = azione(999, 3);
+	azioni[++numeroAzioni] = azione(1051, -11);
+	azioni[++numeroAzioni] = azione(1052, -14);
+	azioni[++numeroAzioni] = azione(1053, -12);
+	azioni[++numeroAzioni] = azione(1055, -13);
+	azioni[++numeroAzioni] = azione(1060, -13);
+	azioni[++numeroAzioni] = azione(1099, -4);
+	azioni[++numeroAzioni] = azione(1100, 5);
+	azioni[++numeroAzioni] = azione(1200, 6);
+	azioni[++numeroAzioni] = azione(1300, 7);
+	azioni[++numeroAzioni] = azione(2050, -2);
+	azioni[++numeroAzioni] = azione(2051, -2);
+	azioni[++numeroAzioni] = azione(2052, -2);
+	azioni[++numeroAzioni] = azione(2150, -10);
+	azioni[++numeroAzioni] = azione(2151, -10);
+	azioni[++numeroAzioni] = azione(2152, -3);
+	azioni[++numeroAzioni] = azione(2255, -15);
+	azioni[++numeroAzioni] = azione(2555, -15);
+	azioni[++numeroAzioni] = azione(2769, -29);
+	azioni[++numeroAzioni] = azione(6550, -10);
+	azioni[++numeroAzioni] = azione(6551, -10);
+	azioni[++numeroAzioni] = azione(6552, -3);
+	azioni[++numeroAzioni] = azione(11066, 16);
+	azioni[++numeroAzioni] = azione(12570, 17);
+	azioni[++numeroAzioni] = azione(12661, 18);
+	azioni[++numeroAzioni] = azione(20300, 21);
+	azioni[++numeroAzioni] = azione(20500, 20);
+	azioni[++numeroAzioni] = azione(22560, 19);
+	azioni[++numeroAzioni] = azione(30300, 21);
+	azioni[++numeroAzioni] = azione(40300, 21);
+	azioni[++numeroAzioni] = azione(42560, 22);
+	azioni[++numeroAzioni] = azione(52267, 23);
+	azioni[++numeroAzioni] = azione(62267, 24);
+	azioni[++numeroAzioni] = azione(70300, 37);
+	azioni[++numeroAzioni] = azione(70400, 38);
+	azioni[++numeroAzioni] = azione(72661, 25);
+	azioni[++numeroAzioni] = azione(72662, 27);
+	azioni[++numeroAzioni] = azione(72664, 26);
+	azioni[++numeroAzioni] = azione(81066, 16);
+	azioni[++numeroAzioni] = azione(82365, 35);
+	azioni[++numeroAzioni] = azione(82465, 34);
+	azioni[++numeroAzioni] = azione(82560, 28);
+	azioni[++numeroAzioni] = azione(82661, 30);
+	azioni[++numeroAzioni] = azione(82662, 33);
+	azioni[++numeroAzioni] = azione(82663, 32);
+	azioni[++numeroAzioni] = azione(82664, 31);
+	azioni[++numeroAzioni] = azione(91069, 36);
 
 
-	oggetti[++fo] = oggetto(66, -1, "un indicatore");
-	oggetti[++fo] = oggetto(61, -1, "un pulsante");
-	oggetti[++fo] = oggetto(70, -1, "un'etichetta");
-	oggetti[++fo] = oggetto(51, 1, "una tuta");
-	oggetti[++fo] = oggetto(60, -2, "un cartello bianco");
-	oggetti[++fo] = oggetto(60, -4, "un cartello giallo");
-	oggetti[++fo] = oggetto(68, -5, "un letto");
-	oggetti[++fo] = oggetto(67, -5, "un armadietto");
-	oggetti[++fo] = oggetto(68, -6, "un letto");
-	oggetti[++fo] = oggetto(67, -6, "un armadietto");
-	oggetti[++fo] = oggetto(50, 6, "un casco");
-	oggetti[++fo] = oggetto(61, -7, "un pulsante rosso");
-	oggetti[++fo] = oggetto(61, -7, "un pulsante verde");
-	oggetti[++fo] = oggetto(66, -8, "un indicatore");
-	oggetti[++fo] = oggetto(65, -8, "una leva");
-	oggetti[++fo] = oggetto(61, -8, "un pulsante rosso");
-	oggetti[++fo] = oggetto(61, -8, "un pulsante verde");
-	oggetti[++fo] = oggetto(60, -8, "un cartello rosso");
-	oggetti[++fo] = oggetto(61, -8, "un pulsante giallo");
-	oggetti[++fo] = oggetto(53, 9, "il secondo pilota");
-	oggetti[++fo] = oggetto(69, -9, "un'antenna parabolica");
-	oggetti[++fo] = oggetto(52, -99, "un camice");
-	oggetti[++fo] = oggetto(54, -99, "una chiave");
-	oggetti[++fo] = oggetto(55, -99, "un manuale");
+	oggetti[++numeroOggetti] = oggetto(66, -1, "un indicatore");
+	oggetti[++numeroOggetti] = oggetto(61, -1, "un pulsante");
+	oggetti[++numeroOggetti] = oggetto(70, -1, "un'etichetta");
+	oggetti[++numeroOggetti] = oggetto(51, 1, "una tuta");
+	oggetti[++numeroOggetti] = oggetto(60, -2, "un cartello bianco");
+	oggetti[++numeroOggetti] = oggetto(60, -4, "un cartello giallo");
+	oggetti[++numeroOggetti] = oggetto(68, -5, "un letto");
+	oggetti[++numeroOggetti] = oggetto(67, -5, "un armadietto");
+	oggetti[++numeroOggetti] = oggetto(68, -6, "un letto");
+	oggetti[++numeroOggetti] = oggetto(67, -6, "un armadietto");
+	oggetti[++numeroOggetti] = oggetto(50, 6, "un casco");
+	oggetti[++numeroOggetti] = oggetto(61, -7, "un pulsante rosso");
+	oggetti[++numeroOggetti] = oggetto(61, -7, "un pulsante verde");
+	oggetti[++numeroOggetti] = oggetto(66, -8, "un indicatore");
+	oggetti[++numeroOggetti] = oggetto(65, -8, "una leva");
+	oggetti[++numeroOggetti] = oggetto(61, -8, "un pulsante rosso");
+	oggetti[++numeroOggetti] = oggetto(61, -8, "un pulsante verde");
+	oggetti[++numeroOggetti] = oggetto(60, -8, "un cartello rosso");
+	oggetti[++numeroOggetti] = oggetto(61, -8, "un pulsante giallo");
+	oggetti[++numeroOggetti] = oggetto(53, 9, "il secondo pilota");
+	oggetti[++numeroOggetti] = oggetto(69, -9, "un'antenna parabolica");
+	oggetti[++numeroOggetti] = oggetto(52, -99, "un camice");
+	oggetti[++numeroOggetti] = oggetto(54, -99, "una chiave");
+	oggetti[++numeroOggetti] = oggetto(55, -99, "un manuale");
 	// "FO"
 }
 
@@ -185,17 +185,16 @@ void gioco::exec()
 		do
 		{
 			cout << "\nSei " << luoghi[lu].get_descrizione().c_str() << ".\n\n";
-			l = lu;
-			pStringa = "Vedo ";
+			mLuogoAttuale = lu;
 			elenca();
 			tempo();
 			printf("\n\n");
 			do
 			{
-				inStringa[0] = '\0';
+				inStringa = "";
 				printf("Cosa devo fare ? ");
 				getline(cin, inStringa);
-			} while (inStringa[0] == '\0');
+			} while (inStringa == "");
 			printf("\n");
 			li = inStringa.size();
 			in = 0;
@@ -221,24 +220,24 @@ void gioco::exec()
 						luogo_oggetto();
 					n1 = lu * 10000;
 					n2 = c1 * 100;
-					a = n1 + n2 + c2;
-					esegui_azione();
-					if (a == 0 && c2 != 0)
+					azioneCorrente = n1 + n2 + c2;
+					azioneCorrente = esegui_azione();
+					if (azioneCorrente == 0 && c2 != 0)
 					{
-						a = n1 + n2 + 99;
+						azioneCorrente = n1 + n2 + 99;
 						esegui_azione();
 					}
-					if (a == 0)
+					if (azioneCorrente == 0)
 					{
-						a = n2 + c2;
+						azioneCorrente = n2 + c2;
 						esegui_azione();
 					}
-					if (a == 0 && c2 != 0)
+					if (azioneCorrente == 0 && c2 != 0)
 					{
-						a = n2 + 99;
+						azioneCorrente = n2 + 99;
 						esegui_azione();
 					}
-					if (a == 0)
+					if (azioneCorrente == 0)
 						printf("- Non capisco.\n");
 				}
 			}
@@ -249,16 +248,16 @@ void gioco::exec()
 int gioco::cerca_parola()
 {
 	int i = 1;
-	int f = fd;
+	int f = numeroComandi;
 	int to_return = 0;
 
-	do 
+	do
 	{
 		int a = (i + f) / 2;
-		aStringa = dzStringa[a];
+		aStringa = comandi[a].get_parola();
 
 		if (pStringa == aStringa)
-			to_return = dz[a];
+			to_return = comandi[a].get_codice();
 		else if (pStringa > aStringa)
 			i = a + 1;
 		else
@@ -280,43 +279,45 @@ void gioco::estrai()
 			pStringa = "";
 		else
 		{
-			a = in;
+			azioneCorrente = in;
 			while (inStringa[in] != ' ' && inStringa[in] != '\'' && in < li)
 				in++;
 
-			pStringa = inStringa.substr(a, in - a);
+			pStringa = inStringa.substr(azioneCorrente, in - azioneCorrente);
 			c = cerca_parola();
 		}
 	} while (c == 7);
 	return;
 }
 
-void gioco::cerca_azione()
+int gioco::cerca_azione(int pAzioneCorrente)
 {
-	i = 1;
-	f = fa;
-	n = a;
+	int i = 1;
+	int f = numeroAzioni;
+	int to_return = 0;
+	int n = pAzioneCorrente;
 
-	do {
-		a = (i + f) / 2;
-		m = ca[a];
-		if (n == m) {
-			a = az[a];
-			return;
-		}
+	do 
+	{
+		pAzioneCorrente = (i + f) / 2;
+		m = azioni[pAzioneCorrente].get_codice();
+		if (n == m)
+			to_return = azioni[pAzioneCorrente].get_azione();
 		else if (n > m)
-			i = a + 1;
+			i = pAzioneCorrente + 1;
 		else
-			f = a - 1;
-	} while (i <= f);
-	a = 0;
+			f = pAzioneCorrente - 1;
+	} while (i <= f && to_return == 0);
+	pAzioneCorrente = 0;
+
+	return to_return;
 }
 
 void gioco::elenca()
 {
-	for (i = 1; i <= fo; i++) {
-		if (abs(oggetti[i].get_luogo()) == l)
-			cout << pStringa << oggetti[i].get_nome() << endl;
+	for (i = 1; i <= numeroOggetti; i++) {
+		if (abs(oggetti[i].get_luogo()) == mLuogoAttuale)
+			cout << "Vedo " << oggetti[i].get_nome() << endl;
 	}
 	return;
 }
@@ -324,7 +325,7 @@ void gioco::elenca()
 void gioco::luogo_oggetto()
 {
 	og = 0;
-	for (i = 1; i <= fo; i++) {
+	for (i = 1; i <= numeroOggetti; i++) {
 		if (oggetti[i].get_codice() == c2)
 			if (abs(oggetti[i].get_luogo()) == lu || oggetti[i].get_luogo() == 0) {
 				og = i;
@@ -375,14 +376,14 @@ void gioco::morto()
 
 void gioco::tempo()
 {
-	t1--;
-	if (t1 <= 10)
+	mTempoRimanente--;
+	if (mTempoRimanente <= 10)
 		printf("Sento un segnale di allarme.\n");
-	if (t1 <= 5)
+	if (mTempoRimanente <= 5)
 		printf("La temperatura e' insopportabile.\n");
-	if (t1 <= 2)
+	if (mTempoRimanente <= 2)
 		printf("La nave e' scossa da vibrazioni.\n");
-	if (t1 == 0) {
+	if (mTempoRimanente == 0) {
 		printf("\n*** Troppo tardi! ***\n\n");
 		printf("Il reattore e' fuori controllo.\n");
 		printf("L'astronave e' disintegrata in minuscoli frammenti\n");
@@ -412,7 +413,7 @@ void gioco::introduzione()
 		"cabina di comandante del 'Neutronia'.\n"
 		"Fa molto caldo. Troppo caldo. Ci\n"
 		"dev'essere qualcosa che non funziona.\n\n";
-	t1 = 100;
+	mTempoRimanente = 100;
 	lu = 6;
 	v1 = 0;
 	v2 = 0;
@@ -423,17 +424,17 @@ void gioco::introduzione()
 void gioco::comune()
 {
 	v1 = 0;
-	t1 = t1 / 2;
+	mTempoRimanente = mTempoRimanente / 2;
 	return;
 }
 
 void gioco::direzioni()
 {
-	a = stoi(luoghi[lu].get_direzioni().substr(2 * c1 - 2, 2));
-	if (a == 0)
+	azioneCorrente = stoi(luoghi[lu].get_direzioni().substr(2 * c1 - 2, 2));
+	if (azioneCorrente == 0)
 		printf("- Di li' non puoi andare\n");
 	else
-		lu = a;
+		lu = azioneCorrente;
 	return;
 }
 
@@ -483,10 +484,10 @@ void gioco::guarda()
 void gioco::save()
 {
 	file = fopen(fStringa.c_str(), "w");
-	for (i = 1; i <= fo; i++)
+	for (i = 1; i <= numeroOggetti; i++)
 		fprintf(file, "%d\n", oggetti[i].get_luogo());
 	fprintf(file, "%d\n", lu);
-	fprintf(file, "%d\n", t1);
+	fprintf(file, "%d\n", mTempoRimanente);
 	fprintf(file, "%d\n", v1);
 	fprintf(file, "%d\n", v2);
 	fclose(file);
@@ -497,10 +498,10 @@ void gioco::load()
 {
 	file = fopen(fStringa.c_str(), "r");
 	int l;
-	for (i = 1; i <= fo; i++)
+	for (i = 1; i <= numeroOggetti; i++)
 		fscanf(file, "%d", &l), oggetti[i].set_luogo(l);
 	fscanf(file, "%d", &lu);
-	fscanf(file, "%d", &t1);
+	fscanf(file, "%d", &mTempoRimanente);
 	fscanf(file, "%d", &v1);
 	fscanf(file, "%d", &v2);
 	fclose(file);
@@ -510,7 +511,7 @@ void gioco::load()
 void gioco::cosa()
 {
 	printf("Possiedi:\n");
-	l = 0;
+	mLuogoAttuale = 0;
 	pStringa = "- ";
 	elenca();
 	return;
@@ -587,7 +588,7 @@ void gioco::azione_15()
 void gioco::azione_16()
 {
 	printf("- TEMPERATURA REATTORE -\n\n");
-	printf("Segna %d gradi e sta\n", 840 - t1 * 4);
+	printf("Segna %d gradi e sta\n", 840 - mTempoRimanente * 4);
 	printf("salendo velocemente. C'e'\n");
 	printf("un segno rosso a 800 gradi.\n");
 	return;
@@ -686,7 +687,7 @@ void gioco::azione_26()
 			morto();
 		}
 		else {
-			for (i = 1; i <= fo; i++) {
+			for (i = 1; i <= numeroOggetti; i++) {
 				if (oggetti[i].get_luogo() == lu) {
 					cout << oggetti[i].get_nome() << " si perde nello spazio\n";
 					oggetti[i].set_luogo(-99);
@@ -847,9 +848,9 @@ void gioco::esci()
 	riparti = false;
 }
 
-void gioco::esegui()
+void gioco::esegui(int pAzioneCorrente)
 {
-	switch (a) 
+	switch (pAzioneCorrente)
 	{
 	case 0:
 		esci();
@@ -966,26 +967,26 @@ void gioco::esegui()
 		azione_38();
 		break;
 	default:
-		printf("AZIONE %d", a);
+		printf("AZIONE %d", pAzioneCorrente);
 	}
 }
 
-void gioco::esegui_azione()
+int gioco::esegui_azione()
 {
-	cerca_azione();
-	if (a != 0) 
+	int mAzione = cerca_azione(azioneCorrente);
+	if (mAzione != 0)
 	{
-		if (c2 == 0 || a > 0)
-			esegui();
-		else 
+		if (c2 == 0 || mAzione > 0)
+			esegui(mAzione);
+		else
 		{
-			a = -a;
+			mAzione = -mAzione;
 			if (og == 0)
 				printf("- Qui non c'e'.\n");
 			else
-				esegui();
+				esegui(mAzione);
 		}
-		a = 1;
+		mAzione = 1;
 	}
-	return;
+	return mAzione;
 }

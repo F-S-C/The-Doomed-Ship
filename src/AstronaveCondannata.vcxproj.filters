@@ -27,6 +27,12 @@
     <ClInclude Include="gioco.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="comando.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="azione.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="luogo.cpp">
@@ -42,6 +48,12 @@
       <Filter>File di origine</Filter>
     </ClCompile>
     <ClCompile Include="gioco.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="comando.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="azione.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>
