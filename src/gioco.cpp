@@ -226,17 +226,17 @@ void gioco::exec()
 					if (azioneCorrente == 0 && c2 != 0)
 					{
 						azioneCorrente = n1 + n2 + 99;
-						esegui_azione();
+						azioneCorrente = esegui_azione();
 					}
 					if (azioneCorrente == 0)
 					{
 						azioneCorrente = n2 + c2;
-						esegui_azione();
+						azioneCorrente = esegui_azione();
 					}
 					if (azioneCorrente == 0 && c2 != 0)
 					{
 						azioneCorrente = n2 + 99;
-						esegui_azione();
+						azioneCorrente = esegui_azione();
 					}
 					if (azioneCorrente == 0)
 						printf("- Non capisco.\n");
