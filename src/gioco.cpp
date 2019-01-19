@@ -185,6 +185,7 @@ void gioco::exec()
 		clear_screen();
 		do
 		{
+			string inStringa;
 			cout << "\nSei " << luoghi[lu].get_descrizione().c_str() << ".\n\n";
 			mLuogoAttuale = lu;
 			elenca();
@@ -199,7 +200,7 @@ void gioco::exec()
 			printf("\n");
 			li = inStringa.size();
 			in = 0;
-			estrai();
+			pStringa = estrai(inStringa);
 			p1Stringa = pStringa;
 			c1 = c;
 			if (p1Stringa == "")
@@ -210,7 +211,7 @@ void gioco::exec()
 				cout << "- Non conosco il verbo '" << p1Stringa << "'.\n";
 			else
 			{
-				estrai();
+				pStringa = estrai(inStringa);
 				p2Stringa = pStringa;
 				c2 = c;
 				if (c2 == 0 && p2Stringa[0] != '\0')
@@ -246,7 +247,7 @@ void gioco::exec()
 	} while (riparti);
 }
 
-int gioco::cerca_parola()
+int gioco::cerca_parola(const string &pStringa)
 {
 	int i = 1;
 	int f = numeroComandi;
@@ -255,7 +256,7 @@ int gioco::cerca_parola()
 	do
 	{
 		int a = (i + f) / 2;
-		aStringa = comandi[a].get_parola();
+		string aStringa = comandi[a].get_parola();
 
 		if (pStringa == aStringa)
 			to_return = comandi[a].get_codice();
@@ -269,8 +270,9 @@ int gioco::cerca_parola()
 	return to_return;
 }
 
-void gioco::estrai()
+string gioco::estrai(const string& inStringa)
 {
+	string pStringa = "";
 	do
 	{
 		c = 0;
@@ -285,10 +287,10 @@ void gioco::estrai()
 				in++;
 
 			pStringa = inStringa.substr(azioneCorrente, in - azioneCorrente);
-			c = cerca_parola();
+			c = cerca_parola(pStringa);
 		}
 	} while (c == 7);
-	return;
+	return pStringa;
 }
 
 int gioco::cerca_azione(int pAzioneCorrente)
@@ -316,7 +318,7 @@ int gioco::cerca_azione(int pAzioneCorrente)
 
 void gioco::elenca()
 {
-	for (i = 1; i <= numeroOggetti; i++) {
+	for (int i = 1; i <= numeroOggetti; i++) {
 		if (abs(oggetti[i].get_luogo()) == mLuogoAttuale)
 			cout << "Vedo " << oggetti[i].get_nome() << endl;
 	}
@@ -326,7 +328,7 @@ void gioco::elenca()
 void gioco::luogo_oggetto()
 {
 	og = 0;
-	for (i = 1; i <= numeroOggetti; i++) {
+	for (int i = 1; i <= numeroOggetti; i++) {
 		if (oggetti[i].get_codice() == c2)
 			if (abs(oggetti[i].get_luogo()) == lu || oggetti[i].get_luogo() == 0) {
 				og = i;
@@ -360,6 +362,8 @@ void gioco::morto()
 	printf("degradato alla memoria.\n");
 	printf("\n");
 	fine_partita = true;
+
+	std::string aStringa;
 	do
 	{
 		printf("Vuoi giocare ancora ? ");
@@ -686,7 +690,7 @@ void gioco::azione_26()
 			morto();
 		}
 		else {
-			for (i = 1; i <= numeroOggetti; i++) {
+			for (int i = 1; i <= numeroOggetti; i++) {
 				if (oggetti[i].get_luogo() == lu) {
 					cout << oggetti[i].get_nome() << " si perde nello spazio\n";
 					oggetti[i].set_luogo(-99);
