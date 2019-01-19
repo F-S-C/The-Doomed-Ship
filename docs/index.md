@@ -1,5 +1,5 @@
 # Menu
 
-- [I comandi](./cmd.html)
-- [Le azioni](./actions.html)
-- [La mappa](./map.html)
+- [I comandi](./cmd.md)
+- [Le azioni](./actions.md)
+- [La mappa](./map.md)
