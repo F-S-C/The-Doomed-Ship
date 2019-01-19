@@ -29,6 +29,7 @@ void gioco::init()
 	comandi[++numeroComandi] = comando("armadietto", 67);
 	comandi[++numeroComandi] = comando("b", 6);
 	comandi[++numeroComandi] = comando("basso", 6);
+	comandi[++numeroComandi] = comando("basta", 90); // nuovo comando (ESCI)
 	comandi[++numeroComandi] = comando("bottone", 61);
 	comandi[++numeroComandi] = comando("camice", 52);
 	comandi[++numeroComandi] = comando("cartello", 60);
@@ -36,6 +37,7 @@ void gioco::init()
 	comandi[++numeroComandi] = comando("chiave", 54);
 	comandi[++numeroComandi] = comando("cosa", 13);
 	comandi[++numeroComandi] = comando("e", 3);
+	comandi[++numeroComandi] = comando("esci", 90); // Nuovo comando (ESCI)
 	comandi[++numeroComandi] = comando("est", 3);
 	comandi[++numeroComandi] = comando("etichetta", 70);
 	comandi[++numeroComandi] = comando("giallo", 63);
@@ -122,6 +124,7 @@ void gioco::init()
 	azioni[++numeroAzioni] = azione(6550, -10);
 	azioni[++numeroAzioni] = azione(6551, -10);
 	azioni[++numeroAzioni] = azione(6552, -3);
+	azioni[++numeroAzioni] = azione(9000, 90); // Nuova azione (ESCI)
 	azioni[++numeroAzioni] = azione(11066, 16);
 	azioni[++numeroAzioni] = azione(12570, 17);
 	azioni[++numeroAzioni] = azione(12661, 18);
@@ -846,6 +849,8 @@ void gioco::azione_38()
 
 void gioco::esci()
 {
+	cout << "Arrivederci!\n";
+	press_any_key();
 	fine_partita = true;
 	riparti = false;
 }
@@ -854,9 +859,6 @@ void gioco::esegui(int pAzioneCorrente)
 {
 	switch (pAzioneCorrente)
 	{
-	case 0:
-		esci();
-		break;
 	case 1:
 		direzioni();
 		break;
@@ -967,6 +969,9 @@ void gioco::esegui(int pAzioneCorrente)
 		break;
 	case 38:
 		azione_38();
+		break;
+	case 90:
+		esci();
 		break;
 	default:
 		printf("AZIONE %d", pAzioneCorrente);
