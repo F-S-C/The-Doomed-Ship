@@ -15,7 +15,7 @@ Tutte le possibili azioni sono memorizzate nel gioco tramite il relativo codice 
 - Tutte le regole precedenti
 - `LL` vale `0` (zero) se l'azione può essere attuata in qualsiasi luogo
 - `OO` vale `0` (zero) se l'azione non richiede oggetti
-- `OO` vale `99` (novantanove) se l'azione può esssere applicata su qualsiasi oggetto.
+- `OO` vale `99` (novantanove) se l'azione può essere applicata su qualsiasi oggetto.
 
 Ogni comando `LLVVOO` viene ricercato nella tavola delle azioni nel seguente modo:
 
