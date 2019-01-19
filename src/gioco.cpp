@@ -188,7 +188,7 @@ void gioco::exec()
 			string inStringa;
 			cout << "\nSei " << luoghi[lu].get_descrizione().c_str() << ".\n\n";
 			mLuogoAttuale = lu;
-			elenca();
+			elenca("Vedo ");
 			tempo();
 			printf("\n\n");
 			do
@@ -200,7 +200,7 @@ void gioco::exec()
 			printf("\n");
 			li = inStringa.size();
 			in = 0;
-			pStringa = estrai(inStringa);
+			string pStringa = estrai(inStringa);
 			p1Stringa = pStringa;
 			c1 = c;
 			if (p1Stringa == "")
@@ -303,7 +303,7 @@ int gioco::cerca_azione(int pAzioneCorrente)
 	do 
 	{
 		pAzioneCorrente = (i + f) / 2;
-		m = azioni[pAzioneCorrente].get_codice();
+		int m = azioni[pAzioneCorrente].get_codice();
 		if (n == m)
 			to_return = azioni[pAzioneCorrente].get_azione();
 		else if (n > m)
@@ -316,11 +316,11 @@ int gioco::cerca_azione(int pAzioneCorrente)
 	return to_return;
 }
 
-void gioco::elenca()
+void gioco::elenca(const string &pInizio)
 {
 	for (int i = 1; i <= numeroOggetti; i++) {
 		if (abs(oggetti[i].get_luogo()) == mLuogoAttuale)
-			cout << "Vedo " << oggetti[i].get_nome() << endl;
+			cout << pInizio << oggetti[i].get_nome() << endl;
 	}
 	return;
 }
@@ -515,8 +515,7 @@ void gioco::cosa()
 {
 	printf("Possiedi:\n");
 	mLuogoAttuale = 0;
-	pStringa = "- ";
-	elenca();
+	elenca("- ");
 	return;
 }
 

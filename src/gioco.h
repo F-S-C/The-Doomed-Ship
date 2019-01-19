@@ -17,7 +17,7 @@ public:
 	int cerca_parola(const std::string &pStringa);
 	std::string estrai(const std::string &inStringa);
 	int cerca_azione(int pAzioneCorrente);
-	void elenca();
+	void elenca(const std::string & pInizio);
 	void luogo_oggetto();
 	void pausa();
 	void morto();
@@ -77,6 +77,7 @@ private:
 	int numeroLuoghi;
 	int numeroAzioni;
 	int numeroOggetti;
+	int mTempoRimanente;
 
 	oggetto oggetti[50];
 	luogo luoghi[30];
@@ -84,16 +85,13 @@ private:
 	azione azioni[150];
 
 	//TODO: check
-
-	int mTempoRimanente;
+	
 	int lu;
 	int og;
 	int v1;
 	int v2;
 	int c;
 	int azioneCorrente;
-	int m;
-	std::string pStringa;
 	std::string p1Stringa;
 	std::string p2Stringa;
 	int c1;
