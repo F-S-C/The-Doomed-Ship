@@ -156,6 +156,7 @@
     <ClInclude Include="gioco.h" />
     <ClInclude Include="luogo.h" />
     <ClInclude Include="oggetto.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="utilities.h" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +167,12 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="oggetto.cpp" />
     <ClCompile Include="utilities.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="AstronaveCondannata.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
