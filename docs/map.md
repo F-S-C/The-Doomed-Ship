@@ -1,81 +1,81 @@
-# The Game's Map
+# La mappa di gioco
 
-## The Places
+## I luoghi
 
-This is a list of places of the game's map. Each location is identified with a numerical ID and a name. For each location, you can also read a small description and see some screenshots (if the place has already been created).
+Questa è una lista di tutti i luoghi della mappa di gioco. Ogni luogo è identificato da un ID numerico e un nome. Per ogni luogo, è fornita una breve descrizione.
 
 <dl>
-    <dt>01: The Cockpit</dt>
+    <dt>01: Cabina di pilotaggio</dt>
     <dd>
         <figure>
             <!--<figcaption>The player's cabin</figcaption>
             <img src="./images/Screenshots/L01.png" alt="Place 01" />-->
         </figure>
     </dd>
-    <dt>02: Corridor's End</dt>
+    <dt>02: Estremità del corridoio</dt>
     <dd>
         <figure>
             <!--<figcaption>The player's cabin</figcaption>
             <img src="./images/Screenshots/L02.png" alt="Place 02" />-->
         </figure>
     </dd>
-    <dt>03: The Corridor</dt>
+    <dt>03: Il corridoio</dt>
     <dd>
         <figure>
             <!--<figcaption>The player's cabin</figcaption>
             <img src="./images/Screenshots/L03.png" alt="Place 03" />-->
         </figure>
     </dd>
-    <dt>04: Corridor's End</dt>
+    <dt>04: Estremità del corridoio</dt>
     <dd>
         <figure>
             <!--<figcaption>The player's cabin</figcaption>
             <img src="./images/Screenshots/L04.png" alt="Place 04" />-->
         </figure>
     </dd>
-    <dt>05: The Second Pilot's Cabin</dt>
+    <dt>05: Cabina del secondo pilota</dt>
     <dd>
         <figure>
             <!--<figcaption>The player's cabin</figcaption>
             <img src="./images/Screenshots/L05.png" alt="Place 05" />-->
         </figure>
     </dd>
-    <dt>06: The Cabin</dt>
+    <dt>06: Cabina</dt>
     <dd>
         <figure>
             <figcaption>The player's cabin. It's the game starting point.</figcaption>
             <img src="./images/Screenshots/L06.png" alt="Place 06" />
         </figure>
     </dd>
-    <dt>07: The Tin Compartment</dt>
+    <dt>07: Compartimento stagno</dt>
     <dd>
         <figure>
             <!--<figcaption>The player's cabin</figcaption>
             <img src="./images/Screenshots/L07.png" alt="Place 07" />-->
         </figure>
     </dd>
-    <dt>08: The Reactor Controls Room</dt>
+    <dt>08: Sala di controllo del reattore</dt>
     <dd>
         <figure>
             <!--<figcaption>The player's cabin</figcaption>
             <img src="./images/Screenshots/L08.png" alt="Place 08" />-->
         </figure>
     </dd>
-    <dt>09: Outside &ndash; Bow of the Ship</dt>
+    <dt>09: Esterno &ndash; prua dell'astronave</dt>
     <dd>
         <figure>
             <!--<figcaption>The player's cabin</figcaption>
             <img src="./images/Screenshots/L09.png" alt="Place 09" />-->
         </figure>
     </dd>
-    <dt>10: Outside</dt>
+    <dt>10: Esterno</dt>
     <dd>
         <figure>
             <!--<figcaption>The player's cabin</figcaption>
             <img src="./images/Screenshots/L10.png" alt="Place 10" />-->
         </figure>
     </dd>
-    <dt>11: Outside &ndash; Stern of the Ship</dt>
+    <dt>11: Esterno &ndash; poppa dell'astronave</dt>
     <dd>
         <figure>
             <!--<figcaption>The player's cabin</figcaption>
@@ -84,24 +84,24 @@ This is a list of places of the game's map. Each location is identified with a n
     </dd>
 </dl>
 
-## The Graph
+## Il grafo
 <figure>
     <figcaption>
-        <strong>Legend:</strong><br />
+        <strong>Legenda:</strong><br />
         <ul>
-            <li>A solid line means that the direction can be taken at any time.</li>
-            <li>A dashed line means that the direction can be taken if certain conditions are met.</li>
+            <li>Una linea continua indica che la direzione può essere presa in ogni momento.</li>
+            <li>Una linea tratteggiata indica che la direzione può essere presa solo se sono verificate determinate condizioni.</li>
             <li>
-                The arrow represent the direction. Unless explicitly stated, the directions are the followings:
+                Le cuspidi rappresentano le direzioni. Se non diversamente specificato, le direzioni sono le seguenti:
                 <ul>
-                    <li><strong>North</strong>: up</li>
-                    <li><strong>East</strong>: right</li>
-                    <li><strong>South</strong>: down</li>
-                    <li><strong>West</strong>: left</li>
+                    <li><strong>Nord</strong>: su</li>
+                    <li><strong>Est</strong>: destra</li>
+                    <li><strong>Sud</strong>: giù</li>
+                    <li><strong>Ovest</strong>: sinistra</li>
                 </ul>
             </li>
-            <li>If the arrow has a label, that label is referred to the nearest arrow tip. A label can contain the direction of the line or a condition that must be met to follow the line.</li>
+            <li>Se una freccia è etichettata, l'etichetta è riferita alla cuspide più vicina. Un etichetta può contenere informazioni sulla direzione del passaggio o sulla condizione che va verificata per effettuare quello spostamento.</li>
         </ul>
     </figcaption>
-    <img src="./images/map.svg" alt="The map's graph" />
+    <img src="./images/map.svg" alt="Il grafo della mappa" />
 </figure>
