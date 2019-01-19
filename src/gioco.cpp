@@ -201,7 +201,7 @@ void gioco::exec()
 			li = inStringa.size();
 			in = 0;
 			string pStringa = estrai(inStringa);
-			p1Stringa = pStringa;
+			string p1Stringa = pStringa;
 			c1 = c;
 			if (p1Stringa == "")
 				printf("- Beh?\n");
@@ -212,7 +212,7 @@ void gioco::exec()
 			else
 			{
 				pStringa = estrai(inStringa);
-				p2Stringa = pStringa;
+				string p2Stringa = pStringa;
 				c2 = c;
 				if (c2 == 0 && p2Stringa[0] != '\0')
 					cout << "- Non conosco la parola '" << p2Stringa << "'.\n";

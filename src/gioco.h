@@ -92,8 +92,6 @@ private:
 	int v2;
 	int c;
 	int azioneCorrente;
-	std::string p1Stringa;
-	std::string p2Stringa;
 	int c1;
 	int c2;
 	int n1, n2;
