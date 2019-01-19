@@ -849,6 +849,15 @@ void gioco::azione_38()
 
 void gioco::esci()
 {
+	int i;
+	do {
+		cout << "Vuoi salvare la partita ?\n1. Si\n0. No\nScelta: ";
+		cin >> i;
+	} while (i < 0 || i > 1);
+	
+	if (i == 1)
+		save();
+
 	cout << "Arrivederci!\n";
 	press_any_key();
 	fine_partita = true;
