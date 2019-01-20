@@ -1,4 +1,4 @@
-<h1><img src="docs/images/Logo/Logo.png" alt="App logo" align="left" width="50px" /> L'Astronave Condannata: un'avventura (2.0)</h1>
+<h1><img src="docs/assets/images/Logo/Logo.png" alt="App logo" align="left" width="50px" /> L'Astronave Condannata: un'avventura (2.0)</h1>
 
 *Read this in other languages: [Italiano](/README.it.md).*
 

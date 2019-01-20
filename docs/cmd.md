@@ -1,6 +1,6 @@
 # I comandi
 
-È qui presentata una lista di tutti i comandi che il gioco accetta. Sono divisi in verbi e oggetti. Ogni comando viene presentato affiancato al suo codice (su cui si basano le azioni). I comandi separati da virgola sono da considerare come sinonimi (infatti hanno lo stesso codice).
+È qui presentata una lista di tutti i comandi che il gioco accetta. Sono divisi in verbi e oggetti. Ogni comando viene presentato affiancato al suo codice (su cui si basano le azioni). I comandi separati da virgola sono da considerare come sinonimi (infatti hanno lo stesso codice). Sono inoltre previsti dei comandi che vengono semplicemente ignorati e sono inseriti solo per rendere il programma più utilizzabile per l'utente.
 
 ## I verbi
 

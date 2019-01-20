@@ -1,2 +1,6 @@
 theme: jekyll-theme-minimal
-title: L'Astronave Condannata
+title: "L'Astronave Condannata"
+description: "Un remake di un gioco che ha ormai più di vent'anni. Questo sito contiene la documentazione del progetto."
+logo: "./assets/images/Logo/Logo.png"
+show_downloads: true
+google_analytics: "UA-132816390-1"
