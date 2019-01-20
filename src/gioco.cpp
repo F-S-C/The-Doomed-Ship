@@ -203,12 +203,12 @@ void gioco::exec()
 			in = 0;
 			string pStringa = estrai(inStringa);
 			string p1Stringa = pStringa;
-			c1 = c;
+			c1 = static_cast<direzioni>(c);
 			if (p1Stringa == "")
 				printf("- Beh?\n");
 			else if (in > 1 && p1Stringa.substr(in - 2, 2) == "re")
 				printf("- Dammi del tu, per favore.\n");
-			else if (c1 == 0 && p1Stringa[0] != '\0')
+			else if (static_cast<int>(c1) == 0 && p1Stringa[0] != '\0')
 				cout << "- Non conosco il verbo '" << p1Stringa << "'.\n";
 			else
 			{
@@ -222,7 +222,7 @@ void gioco::exec()
 					if (c2 != 0)
 						luogo_oggetto();
 					int n1 = luogoAttuale * 10000;
-					int n2 = c1 * 100;
+					int n2 = static_cast<int>(c1) * 100;
 					azioneCorrente = n1 + n2 + c2;
 					azioneCorrente = esegui_azione();
 					if (azioneCorrente == 0 && c2 != 0)
@@ -434,14 +434,13 @@ void gioco::comune()
 	return;
 }
 
-void gioco::direzioni()
+void gioco::spostamento()
 {
-	azioneCorrente = stoi(luoghi[luogoAttuale].get_direzioni().substr(2 * c1 - 2, 2));
+	azioneCorrente = stoi(luoghi[luogoAttuale].get_direzioni().substr(2 * static_cast<int>(c1) - 2, 2));
 	if (azioneCorrente == 0)
 		printf("- Di li' non puoi andare\n");
 	else
 		luogoAttuale = azioneCorrente;
-	return;
 }
 
 void gioco::prendi()
@@ -831,7 +830,7 @@ void gioco::azione_37()
 	if (v2 == 0)
 		luogoAttuale = 4;
 	else
-		direzioni();
+		spostamento();
 	return;
 }
 
@@ -840,7 +839,7 @@ void gioco::azione_38()
 	if (v2 == 1)
 		luogoAttuale = 11;
 	else
-		direzioni();
+		spostamento();
 	return;
 }
 
@@ -866,7 +865,7 @@ void gioco::esegui(int pAzioneCorrente)
 	switch (pAzioneCorrente)
 	{
 	case 1:
-		direzioni();
+		spostamento();
 		break;
 	case 2:
 		prendi();

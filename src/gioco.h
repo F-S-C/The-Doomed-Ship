@@ -9,6 +9,17 @@
 
 class gioco
 {
+private:
+	enum class direzioni : unsigned int
+	{
+		INVALID = 0,
+		NORD = 1,
+		SUD = 2,
+		EST = 3,
+		OVEST = 4,
+		SU = 5,
+		GIU = 6
+	};
 public:
 	gioco();
 
@@ -24,7 +35,7 @@ public:
 	void tempo();
 	void introduzione();
 	void comune();
-	void direzioni();
+	void spostamento();
 
 	void prendi();
 	void lascia();
@@ -92,7 +103,7 @@ private:
 	int v2;
 	int c;
 	int azioneCorrente;
-	int c1;
+	direzioni c1;
 	int c2;
 	int in;
 
