@@ -2,7 +2,7 @@
 
 *Read this in other languages: [Italiano](/README.it.md).*
 
-"_L'Astronave Condannata: un'avventura_" is a game created by Enrico Colombini and Chiara Tovena, released as _freeware_ and modified (with the author's permission) by the team F.S.C., that has decided to revisit the original game from a mother point of view, realizing it using C++ and the **Unreal Engine 4**.
+"_L'Astronave Condannata: un'avventura_" is a game created by Enrico Colombini and Chiara Tovena, released as _freeware_ and modified (with the author's permission) by the team F.S.C., that has decided to revisit the original game from a mother point of view, realizing it using **C++**.
 
 <h2>Table of Contents</h2>
 
