@@ -14,6 +14,8 @@ inline int press_any_key(const std::string& prompt = "Premi un tasto per continu
 template <typename _ObjectToPrint>
 void print_colored(const _ObjectToPrint& msg, unsigned color);
 
+bool get_yn_response(const std::string& message);
+
 #ifdef _WIN32
 #include <windows.h>
 #include <iostream>

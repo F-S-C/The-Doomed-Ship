@@ -28,7 +28,7 @@ public:
 	int cerca_parola(const std::string &pStringa);
 	std::string estrai(const std::string &inStringa);
 	int cerca_azione(int pAzioneCorrente);
-	void elenca(const std::string & pInizio, int pLuogo);
+	void elenca(const std::string &pInizio, int pLuogo);
 	void luogo_oggetto();
 	void pausa();
 	void morto();
@@ -45,11 +45,11 @@ public:
 	void cosa();
 	void vuota();
 	void azione_10();
-	void azione_11();
-	void azione_12();
-	void azione_13();
+	void guarda_tuta();					/// azione 11
+	void guarda_secondo_pilota();		/// azione 12
+	void guarda_cartello();				/// azione 13
 	void azione_14();
-	void azione_15();
+	void leggi_manuale();				/// azione 15
 	void azione_16();
 	void azione_17();
 	void azione_18();
@@ -58,7 +58,7 @@ public:
 	void azione_21();
 	void azione_22();
 	void azione_23();
-	void azione_24();
+	void apri_armadietto_personaggio();	/// azione 24
 	void azione_25();
 	void azione_26();
 	void azione_27();
@@ -68,12 +68,12 @@ public:
 	void azione_31();
 	void azione_32();
 	void azione_33();
-	void azione_34();
+	void vittoria();					/// azione 34
 	void azione_35();
 	void azione_36();
 	void azione_37();
 	void azione_38();
-	void esci();
+	void esci();						/// azione 90
 
 	void esegui(int pAzioneCorrente);
 	int esegui_azione();

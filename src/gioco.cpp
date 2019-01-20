@@ -364,20 +364,10 @@ void gioco::morto()
 	printf("\n");
 	fine_partita = true;
 
-	std::string aStringa;
-	do
-	{
-		printf("Vuoi giocare ancora ? ");
-		cin >> aStringa;
-	} while (aStringa[0] != 's' && aStringa[0] != 'n');
+	riparti = get_yn_response("Vuoi giocare ancora?");
 
-	if (aStringa[0] == 's')
-		riparti = true;
-	else
-	{
-		printf("\n\nCiao!\n\n");
-		riparti = false;
-	}
+	if (!riparti)
+		cout << "\n\nCiao!\n\n";
 }
 
 void gioco::tempo()
@@ -536,14 +526,14 @@ void gioco::azione_10()
 	return;
 }
 
-void gioco::azione_11()
+void gioco::guarda_tuta()
 {
 	printf("E' la tuta per la tua attivita'\n");
 	printf("extraveicolare.\n");
 	return;
 }
 
-void gioco::azione_12()
+void gioco::guarda_secondo_pilota()
 {
 	printf("E' privo di conoscenza ed ha\n");
 	printf("un'ammaccatura nel casco.\n");
@@ -554,7 +544,7 @@ void gioco::azione_12()
 	return;
 }
 
-void gioco::azione_13()
+void gioco::guarda_cartello()
 {
 	printf("Non e' meglio leggerlo?\n");
 	return;
@@ -568,7 +558,7 @@ void gioco::azione_14()
 	return;
 }
 
-void gioco::azione_15()
+void gioco::leggi_manuale()
 {
 	if (oggetti[og].get_luogo() == luogoAttuale)
 		printf("Prendilo in mano, prima.\n");
@@ -661,7 +651,7 @@ void gioco::azione_23()
 	return;
 }
 
-void gioco::azione_24()
+void gioco::apri_armadietto_personaggio()
 {
 	printf("E' vuoto.\n");
 	return;
@@ -788,7 +778,7 @@ void gioco::azione_33()
 	return;
 }
 
-void gioco::azione_34()
+void gioco::vittoria()
 {
 	printf("Clanck.\n");
 	if (v1 != 3)
@@ -844,14 +834,8 @@ void gioco::azione_38()
 }
 
 void gioco::esci()
-{
-	int i;
-	do {
-		cout << "Vuoi salvare la partita ?\n1. Si\n0. No\nScelta: ";
-		cin >> i;
-	} while (i < 0 || i > 1);
-	
-	if (i == 1)
+{	
+	if (get_yn_response("Vuoi salvare la partita?"))
 		save();
 
 	cout << "Arrivederci!\n";
@@ -892,19 +876,19 @@ void gioco::esegui(int pAzioneCorrente)
 		azione_10();
 		break;
 	case 11:
-		azione_11();
+		guarda_tuta();
 		break;
 	case 12:
-		azione_12();
+		guarda_secondo_pilota();
 		break;
 	case 13:
-		azione_13();
+		guarda_cartello();
 		break;
 	case 14:
 		azione_14();
 		break;
 	case 15:
-		azione_15();
+		leggi_manuale();
 		break;
 	case 16:
 		azione_16();
@@ -931,7 +915,7 @@ void gioco::esegui(int pAzioneCorrente)
 		azione_23();
 		break;
 	case 24:
-		azione_24();
+		apri_armadietto_personaggio();
 		break;
 	case 25:
 		azione_25();
@@ -961,7 +945,7 @@ void gioco::esegui(int pAzioneCorrente)
 		azione_33();
 		break;
 	case 34:
-		azione_34();
+		vittoria();
 		break;
 	case 35:
 		azione_35();

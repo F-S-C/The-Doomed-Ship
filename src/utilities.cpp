@@ -1,5 +1,33 @@
 #include "utilities.h"
 
+#include <algorithm>
+
+using namespace std;
+
+bool get_yn_response(const std::string & message)
+{
+	string input = "";
+	enum class ResponseType { YES, NO, INVALID } response;
+	do
+	{
+		if (input != "")
+			cout << "Risposta non valida. ";
+		cout << message << " (s/n) ";
+		cin >> input;
+		transform(input.begin(), input.end(), input.begin(), ::tolower);
+
+		if (input == "s" || input == "si" || input == "si'" || input == "y" || input == "yes")
+			response = ResponseType::YES;
+		else if (input == "n" || input == "no")
+			response = ResponseType::NO;
+		else
+			response = ResponseType::INVALID;
+
+	} while (response == ResponseType::INVALID);
+
+	return response == ResponseType::YES;
+}
+
 #ifdef _WIN32
 /* ---------------------------------------------------------------------------
  * PressAnyKey()
