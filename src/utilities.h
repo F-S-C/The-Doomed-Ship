@@ -1,4 +1,25 @@
+#pragma once
+
 #include <string>
+#include <iostream>
+#include <iomanip>
+
+class progress_bar
+{
+public:
+	progress_bar(int max);
+	progress_bar(int max, const std::string& msg, const char symb);
+
+	void operator++();
+	void operator++(int);
+	progress_bar & operator+=(const int right);
+private:
+	int progress;
+	int max;
+	std::string message;
+	char symbol;
+	void show_progress_bar();
+};
 
 void clear_screen();
 

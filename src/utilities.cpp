@@ -28,6 +28,59 @@ bool get_yn_response(const std::string & message)
 	return response == ResponseType::YES;
 }
 
+#pragma region Progress Bar
+
+progress_bar::progress_bar(int max)
+{
+	this->max = max;
+	progress = 0;
+	message = "";
+	symbol = '=';
+}
+
+progress_bar::progress_bar(int max, const std::string & msg, const char symb)
+{
+	this->max = max;
+	progress = 0;
+	message = msg;
+	symbol = symb;
+}
+
+void progress_bar::operator++()
+{
+	progress++;
+	show_progress_bar();
+}
+
+void progress_bar::operator++(int)
+{
+	progress++;
+	show_progress_bar();
+}
+
+progress_bar & progress_bar::operator+=(const int right)
+{
+	for (int i = 0; i < right; i++)
+		(*this)++;
+	return *this;
+}
+
+void progress_bar::show_progress_bar()
+{
+	std::string progressbar = "";
+
+	int charToDisplay = 25 * progress / max;
+
+	std::cout << "\r" << message << " ";
+
+	for (int i = 0; i <= charToDisplay; i++)
+		progressbar += symbol;
+	std::cout << "[" << std::setw(25) << std::left << progressbar << "] ";
+}
+
+
+#pragma endregion
+
 #ifdef _WIN32
 /* ---------------------------------------------------------------------------
  * PressAnyKey()

@@ -478,27 +478,47 @@ void gioco::guarda()
 
 void gioco::save()
 {
+	progress_bar p(numeroOggetti + 4, "Salvataggio in corso", '=');
+
 	std::ofstream file(mNomeFile, std::ios::trunc);
-	for (int i = 1; i <= numeroOggetti; i++)
+
+	for (int i = 1; i <= numeroOggetti; i++, ++p)
 		file << oggetti[i].get_luogo() << std::endl;
-	file << luogoAttuale << std::endl
-		<< mTempoRimanente << std::endl
-		<< v1 << std::endl
-		<< v2 << std::endl;
+
+	file << luogoAttuale << std::endl;
+	++p;
+
+	file << mTempoRimanente << std::endl;
+	++p;
+
+	file << v1 << std::endl;
+	++p;
+
+	file << v2 << std::endl;
+	++p;
+
 	file.close();
+
+	cout << "\nSalvataggio completato!\n";
 }
 
 void gioco::load()
 {
+	progress_bar p(numeroOggetti + 4, "Caricamento in corso", '=');
 	std::ifstream file(mNomeFile);
-	for (int i = 1; i <= numeroOggetti; i++)
+	for (int i = 1; i <= numeroOggetti; i++, ++p)
 	{
 		int l;
 		file >> l;
 		oggetti[i].set_luogo(l);
 	}
 	file >> luogoAttuale >> mTempoRimanente >> v1 >> v2;
+	p += 4;
 	file.close();
+
+	cout << "\nCaricamento completato!\n";
+	pausa();
+	clear_screen();
 }
 
 void gioco::cosa()
