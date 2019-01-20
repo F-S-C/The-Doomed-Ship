@@ -17,7 +17,7 @@ public:
 	int cerca_parola(const std::string &pStringa);
 	std::string estrai(const std::string &inStringa);
 	int cerca_azione(int pAzioneCorrente);
-	void elenca(const std::string & pInizio);
+	void elenca(const std::string & pInizio, int pLuogo);
 	void luogo_oggetto();
 	void pausa();
 	void morto();
@@ -86,7 +86,7 @@ private:
 
 	//TODO: check
 	
-	int lu;
+	int luogoAttuale;
 	int og;
 	int v1;
 	int v2;
@@ -94,10 +94,7 @@ private:
 	int azioneCorrente;
 	int c1;
 	int c2;
-	int n1, n2;
-	int li;
 	int in;
-	int mLuogoAttuale;
 
 	static constexpr char const *mNomeFile = "astro";
 };

@@ -189,9 +189,8 @@ void gioco::exec()
 		do
 		{
 			string inStringa;
-			cout << "\nSei " << luoghi[lu].get_descrizione().c_str() << ".\n\n";
-			mLuogoAttuale = lu;
-			elenca("Vedo ");
+			cout << "\nSei " << luoghi[luogoAttuale].get_descrizione().c_str() << ".\n\n";
+			elenca("Vedo ", luogoAttuale);
 			tempo();
 			printf("\n\n");
 			do
@@ -201,7 +200,6 @@ void gioco::exec()
 				getline(cin, inStringa);
 			} while (inStringa == "");
 			printf("\n");
-			li = inStringa.size();
 			in = 0;
 			string pStringa = estrai(inStringa);
 			string p1Stringa = pStringa;
@@ -223,8 +221,8 @@ void gioco::exec()
 				{
 					if (c2 != 0)
 						luogo_oggetto();
-					n1 = lu * 10000;
-					n2 = c1 * 100;
+					int n1 = luogoAttuale * 10000;
+					int n2 = c1 * 100;
 					azioneCorrente = n1 + n2 + c2;
 					azioneCorrente = esegui_azione();
 					if (azioneCorrente == 0 && c2 != 0)
@@ -281,12 +279,12 @@ string gioco::estrai(const string& inStringa)
 		c = 0;
 		while (inStringa[in] == ' ' || inStringa[in] == '\'')
 			in++;
-		if (in >= li)
+		if (in >= inStringa.length())
 			pStringa = "";
 		else
 		{
 			azioneCorrente = in;
-			while (inStringa[in] != ' ' && inStringa[in] != '\'' && in < li)
+			while (inStringa[in] != ' ' && inStringa[in] != '\'' && in < inStringa.length())
 				in++;
 
 			pStringa = inStringa.substr(azioneCorrente, in - azioneCorrente);
@@ -319,10 +317,10 @@ int gioco::cerca_azione(int pAzioneCorrente)
 	return to_return;
 }
 
-void gioco::elenca(const string &pInizio)
+void gioco::elenca(const string &pInizio, int pLuogo)
 {
 	for (int i = 1; i <= numeroOggetti; i++) {
-		if (abs(oggetti[i].get_luogo()) == mLuogoAttuale)
+		if (abs(oggetti[i].get_luogo()) == pLuogo)
 			cout << pInizio << oggetti[i].get_nome() << endl;
 	}
 	return;
@@ -333,7 +331,7 @@ void gioco::luogo_oggetto()
 	og = 0;
 	for (int i = 1; i <= numeroOggetti; i++) {
 		if (oggetti[i].get_codice() == c2)
-			if (abs(oggetti[i].get_luogo()) == lu || oggetti[i].get_luogo() == 0) {
+			if (abs(oggetti[i].get_luogo()) == luogoAttuale || oggetti[i].get_luogo() == 0) {
 				og = i;
 				break;
 			}
@@ -422,7 +420,7 @@ void gioco::introduzione()
 		"Fa molto caldo. Troppo caldo. Ci\n"
 		"dev'essere qualcosa che non funziona.\n\n";
 	mTempoRimanente = 100;
-	lu = 6;
+	luogoAttuale = 6;
 	v1 = 0;
 	v2 = 0;
 	printf("\n");
@@ -438,11 +436,11 @@ void gioco::comune()
 
 void gioco::direzioni()
 {
-	azioneCorrente = stoi(luoghi[lu].get_direzioni().substr(2 * c1 - 2, 2));
+	azioneCorrente = stoi(luoghi[luogoAttuale].get_direzioni().substr(2 * c1 - 2, 2));
 	if (azioneCorrente == 0)
 		printf("- Di li' non puoi andare\n");
 	else
-		lu = azioneCorrente;
+		luogoAttuale = azioneCorrente;
 	return;
 }
 
@@ -472,8 +470,8 @@ void gioco::lascia()
 {
 	if (og == 0 || oggetti[og].get_luogo() != 0)
 		printf("- Non ce l'hai.\n");
-	else if (lu < 9) {
-		oggetti[og].set_luogo(lu);
+	else if (luogoAttuale < 9) {
+		oggetti[og].set_luogo(luogoAttuale);
 		printf("Fatto.\n");
 	}
 	else {
@@ -494,7 +492,7 @@ void gioco::save()
 	std::ofstream file(mNomeFile, std::ios::trunc);
 	for (int i = 1; i <= numeroOggetti; i++)
 		file << oggetti[i].get_luogo() << std::endl;
-	file << lu << std::endl
+	file << luogoAttuale << std::endl
 		<< mTempoRimanente << std::endl
 		<< v1 << std::endl
 		<< v2 << std::endl;
@@ -510,15 +508,14 @@ void gioco::load()
 		file >> l;
 		oggetti[i].set_luogo(l);
 	}
-	file >> lu >> mTempoRimanente >> v1 >> v2;
+	file >> luogoAttuale >> mTempoRimanente >> v1 >> v2;
 	file.close();
 }
 
 void gioco::cosa()
 {
 	printf("Possiedi:\n");
-	mLuogoAttuale = 0;
-	elenca("- ");
+	elenca("- ", 0);
 	return;
 }
 
@@ -531,7 +528,7 @@ void gioco::azione_10()
 {
 	if (oggetti[og].get_luogo() != 0)
 		printf("Non ce l'hai.\n");
-	else if (!(lu == 9) || (lu == 7 && v2 == 1))
+	else if (!(luogoAttuale == 9) || (luogoAttuale == 7 && v2 == 1))
 		lascia();
 	else {
 		printf("L'aria! L'aria! Aaaagh!!!\n");
@@ -574,7 +571,7 @@ void gioco::azione_14()
 
 void gioco::azione_15()
 {
-	if (oggetti[og].get_luogo() == lu)
+	if (oggetti[og].get_luogo() == luogoAttuale)
 		printf("Prendilo in mano, prima.\n");
 	else {
 		printf("- MANUALE DI ISTRUZIONI DEL -\n");
@@ -626,7 +623,7 @@ void gioco::azione_19()
 
 void gioco::azione_20()
 {
-	lu = 1;
+	luogoAttuale = 1;
 	if (oggetti[20].get_luogo() == 9) {
 		printf("Se solo ci fosse qui il secondo\n");
 		printf("pilota, il solo che se ne intende\n");
@@ -659,8 +656,8 @@ void gioco::azione_23()
 		printf("E' chiuso a chiave.\n");
 	else {
 		printf("Fatto.\n");
-		oggetti[24].set_luogo(lu);
-		oggetti[22].set_luogo(lu);
+		oggetti[24].set_luogo(luogoAttuale);
+		oggetti[22].set_luogo(luogoAttuale);
 	}
 	return;
 }
@@ -693,7 +690,7 @@ void gioco::azione_26()
 		}
 		else {
 			for (int i = 1; i <= numeroOggetti; i++) {
-				if (oggetti[i].get_luogo() == lu) {
+				if (oggetti[i].get_luogo() == luogoAttuale) {
 					cout << oggetti[i].get_nome() << " si perde nello spazio\n";
 					oggetti[i].set_luogo(-99);
 				}
@@ -720,7 +717,7 @@ void gioco::azione_27()
 			printf("- Presto, ferma il reattore!\n");
 			printf("Ecco la chiave del mio...\n");
 			printf("Poi perde nuovamente i sensi\n");
-			oggetti[23].set_luogo(lu);
+			oggetti[23].set_luogo(luogoAttuale);
 		}
 	}
 	return;
@@ -832,7 +829,7 @@ void gioco::azione_36()
 void gioco::azione_37()
 {
 	if (v2 == 0)
-		lu = 4;
+		luogoAttuale = 4;
 	else
 		direzioni();
 	return;
@@ -841,7 +838,7 @@ void gioco::azione_37()
 void gioco::azione_38()
 {
 	if (v2 == 1)
-		lu = 11;
+		luogoAttuale = 11;
 	else
 		direzioni();
 	return;
