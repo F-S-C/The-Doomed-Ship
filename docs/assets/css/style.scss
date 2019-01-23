@@ -1,0 +1,9 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+footer {
+    // inherits all from site's theme
+    bottom: 0px;
+}
