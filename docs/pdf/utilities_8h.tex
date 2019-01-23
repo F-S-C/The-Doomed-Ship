@@ -1,0 +1,77 @@
+\hypertarget{utilities_8h}{}\section{utilities.\+h File Reference}
+\label{utilities_8h}\index{utilities.h@{utilities.h}}
+
+
+Some utilities functions. This file contains the declaration and definition of various miscellaneous functions that are useful in various parts of the project.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include \char`\"{}utilities/string\+\_\+utilities.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Input\+Type $>$ }\\Input\+Type \mbox{\hyperlink{utilities_8h_a9d210fea9961d019fda46a720fdd27ae}{get\+\_\+value\+\_\+in\+\_\+range}} (const Input\+Type \&min, const Input\+Type \&max, const std\+::string \&prompt, const std\+::string \&error)
+\begin{DoxyCompactList}\small\item\em Get a value in a range. Given a range, this functions prompt the user for an input. In case of error (if the inserted value isn\textquotesingle{}t in the range or other kind of errors that can set to true the {\ttfamily std\+::cin.\+fail()} flag), the user is asked to insert a new value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utilities_8h_a4953d1edcbbfc7e420c423ded1d5621a}\label{utilities_8h_a4953d1edcbbfc7e420c423ded1d5621a}} 
+void \mbox{\hyperlink{utilities_8h_a4953d1edcbbfc7e420c423ded1d5621a}{clear\+\_\+screen}} ()
+\begin{DoxyCompactList}\small\item\em Clear the screen. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utilities_8h_aa59008ef7f8ac0f23073c5de4715b481}\label{utilities_8h_aa59008ef7f8ac0f23073c5de4715b481}} 
+void \mbox{\hyperlink{utilities_8h_aa59008ef7f8ac0f23073c5de4715b481}{press\+\_\+any\+\_\+key}} ()
+\begin{DoxyCompactList}\small\item\em Press any key. Prompts the user to press any key to continue and waits for a key press. The execution does {\itshape not} continue while this function is waiting for an input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Some utilities functions. This file contains the declaration and definition of various miscellaneous functions that are useful in various parts of the project. 
+
+\begin{DoxyCopyright}{Copyright}
+G\+NU General Public License version 3. 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{utilities_8h_a9d210fea9961d019fda46a720fdd27ae}\label{utilities_8h_a9d210fea9961d019fda46a720fdd27ae}} 
+\index{utilities.h@{utilities.h}!get\_value\_in\_range@{get\_value\_in\_range}}
+\index{get\_value\_in\_range@{get\_value\_in\_range}!utilities.h@{utilities.h}}
+\subsubsection{\texorpdfstring{get\_value\_in\_range()}{get\_value\_in\_range()}}
+{\footnotesize\ttfamily template$<$typename Input\+Type $>$ \\
+Input\+Type get\+\_\+value\+\_\+in\+\_\+range (\begin{DoxyParamCaption}\item[{const Input\+Type \&}]{min,  }\item[{const Input\+Type \&}]{max,  }\item[{const std\+::string \&}]{prompt,  }\item[{const std\+::string \&}]{error }\end{DoxyParamCaption})}
+
+
+
+Get a value in a range. Given a range, this functions prompt the user for an input. In case of error (if the inserted value isn\textquotesingle{}t in the range or other kind of errors that can set to true the {\ttfamily std\+::cin.\+fail()} flag), the user is asked to insert a new value. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Input\+Type} & The type of object that must be inserted. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em min} & The minimum value that can be accepted \+\_\+(inclusive)\+\_\+. \\
+\hline
+\mbox{\texttt{ in}}  & {\em max} & The maximum value that can be accepted \+\_\+(inclusive)\+\_\+. \\
+\hline
+\mbox{\texttt{ in}}  & {\em prompt} & The message that will be displayed to ask the user for an input. \\
+\hline
+\mbox{\texttt{ in}}  & {\em error} & The message that will be displayed in case of errors. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The {\ttfamily error} message is prepended to the prompt value with the only addition of a space between the two values. So the resulting message will be like
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{error + \textcolor{stringliteral}{" "} + prompt}
+\end{DoxyCode}
+ 
+\end{DoxyNote}
+
+
+\begin{DoxyReturn}{Returns}
+The inputed value that is in the range \mbox{[}{\ttfamily min}, {\ttfamily max}\mbox{]}. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+In order to use this function on all kinds of object, there must be an ovveride of the {\ttfamily operator $<$}, {\ttfamily operator $>$} and {\ttfamily operator $>$$>$ (std\+::istream\&, Input\+Type\&)}. 
+\end{DoxyPrecond}

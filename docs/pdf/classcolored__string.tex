@@ -1,0 +1,166 @@
+\hypertarget{classcolored__string}{}\section{colored\+\_\+string Class Reference}
+\label{classcolored__string}\index{colored\_string@{colored\_string}}
+
+
+A colored string This class allows to print a colored string to the stdout. This is a cross platform solution.  
+
+
+
+
+{\ttfamily \#include $<$string\+\_\+utilities.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497}{Print\+Colors}} \+: short \{ \newline
+\mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a08d0012388564e95c3b4a7407cf04965}{Print\+Colors\+::\+B\+L\+A\+CK}} = 0, 
+\mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497aa2d9547b5d3dd9f05984475f7c926da0}{Print\+Colors\+::\+R\+ED}} = 1, 
+\mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a9de0e5dd94e861317e74964bed179fa0}{Print\+Colors\+::\+G\+R\+E\+EN}} = 2, 
+\mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a8a568e5f41b7e4da88fe5c4a00aad34e}{Print\+Colors\+::\+Y\+E\+L\+L\+OW}} = 3, 
+\newline
+\mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a1b3e1ee9bff86431dea6b181365ba65f}{Print\+Colors\+::\+B\+L\+UE}} = 4, 
+\mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497ac634ffea7195608364671ac52ee59a61}{Print\+Colors\+::\+M\+A\+G\+E\+N\+TA}} = 5, 
+\mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a344dd8cd533280795b9db82ef0c92749}{Print\+Colors\+::\+C\+Y\+AN}} = 6, 
+\mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497ab5bf627e448384cf3a4c35121ca6008d}{Print\+Colors\+::\+W\+H\+I\+TE}} = 7
+ \}
+\begin{DoxyCompactList}\small\item\em Printable colors. This enumerator contains all the possible colors that can be printed. Each color is identified by an integer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcolored__string_a73b0c596b43789a0952dfcc9b56c301b}{colored\+\_\+string}} (const std\+::string \&str, const \mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497}{Print\+Colors}} foreground=\mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497aa2d9547b5d3dd9f05984475f7c926da0}{Print\+Colors\+::\+R\+ED}}, const \mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497}{Print\+Colors}} background=\mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a08d0012388564e95c3b4a7407cf04965}{Print\+Colors\+::\+B\+L\+A\+CK}})
+\begin{DoxyCompactList}\small\item\em Colored string\textquotesingle{}s constructor. This creates a new colored string ready to be printed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcolored__string_a530408625112fe887b3fd5cf5965f03e}\label{classcolored__string_a530408625112fe887b3fd5cf5965f03e}} 
+{\bfseries operator std\+::string} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcolored__string_a2506a30243275fae082420c55d087734}\label{classcolored__string_a2506a30243275fae082420c55d087734}} 
+std\+::string {\bfseries m\+\_\+str}
+\item 
+\mbox{\Hypertarget{classcolored__string_a6028a3a4cec1476dfb4ce48d3f901812}\label{classcolored__string_a6028a3a4cec1476dfb4ce48d3f901812}} 
+std\+::string {\bfseries m\+\_\+color}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classcolored__string_a7a425cff7a8554e3612f1ccadb100117}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classcolored__string}{colored\+\_\+string}} \&str)
+\begin{DoxyCompactList}\small\item\em Output the colored string. This outputs the colored string to a std\+::ostream (like {\ttfamily cout}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A colored string This class allows to print a colored string to the stdout. This is a cross platform solution. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497}\label{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497}} 
+\index{colored\_string@{colored\_string}!PrintColors@{PrintColors}}
+\index{PrintColors@{PrintColors}!colored\_string@{colored\_string}}
+\subsubsection{\texorpdfstring{PrintColors}{PrintColors}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497}{colored\+\_\+string\+::\+Print\+Colors}} \+: short\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Printable colors. This enumerator contains all the possible colors that can be printed. Each color is identified by an integer. 
+
+\begin{DoxyWarning}{Warning}
+The colors have various code based on the platform. This is because some operative systems (like Windows) don\textquotesingle{}t support A\+S\+C\+II Escaped sequences. 
+\end{DoxyWarning}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLACK@{BLACK}!colored\_string@{colored\_string}}\index{colored\_string@{colored\_string}!BLACK@{BLACK}}}\mbox{\Hypertarget{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a08d0012388564e95c3b4a7407cf04965}\label{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a08d0012388564e95c3b4a7407cf04965}} 
+B\+L\+A\+CK&The black color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RED@{RED}!colored\_string@{colored\_string}}\index{colored\_string@{colored\_string}!RED@{RED}}}\mbox{\Hypertarget{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497aa2d9547b5d3dd9f05984475f7c926da0}\label{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497aa2d9547b5d3dd9f05984475f7c926da0}} 
+R\+ED&The red color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GREEN@{GREEN}!colored\_string@{colored\_string}}\index{colored\_string@{colored\_string}!GREEN@{GREEN}}}\mbox{\Hypertarget{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a9de0e5dd94e861317e74964bed179fa0}\label{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a9de0e5dd94e861317e74964bed179fa0}} 
+G\+R\+E\+EN&The green color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{YELLOW@{YELLOW}!colored\_string@{colored\_string}}\index{colored\_string@{colored\_string}!YELLOW@{YELLOW}}}\mbox{\Hypertarget{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a8a568e5f41b7e4da88fe5c4a00aad34e}\label{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a8a568e5f41b7e4da88fe5c4a00aad34e}} 
+Y\+E\+L\+L\+OW&The yellow color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLUE@{BLUE}!colored\_string@{colored\_string}}\index{colored\_string@{colored\_string}!BLUE@{BLUE}}}\mbox{\Hypertarget{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a1b3e1ee9bff86431dea6b181365ba65f}\label{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a1b3e1ee9bff86431dea6b181365ba65f}} 
+B\+L\+UE&The blue color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAGENTA@{MAGENTA}!colored\_string@{colored\_string}}\index{colored\_string@{colored\_string}!MAGENTA@{MAGENTA}}}\mbox{\Hypertarget{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497ac634ffea7195608364671ac52ee59a61}\label{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497ac634ffea7195608364671ac52ee59a61}} 
+M\+A\+G\+E\+N\+TA&The magenta color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CYAN@{CYAN}!colored\_string@{colored\_string}}\index{colored\_string@{colored\_string}!CYAN@{CYAN}}}\mbox{\Hypertarget{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a344dd8cd533280795b9db82ef0c92749}\label{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a344dd8cd533280795b9db82ef0c92749}} 
+C\+Y\+AN&The cyan color. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WHITE@{WHITE}!colored\_string@{colored\_string}}\index{colored\_string@{colored\_string}!WHITE@{WHITE}}}\mbox{\Hypertarget{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497ab5bf627e448384cf3a4c35121ca6008d}\label{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497ab5bf627e448384cf3a4c35121ca6008d}} 
+W\+H\+I\+TE&The white color. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcolored__string_a73b0c596b43789a0952dfcc9b56c301b}\label{classcolored__string_a73b0c596b43789a0952dfcc9b56c301b}} 
+\index{colored\_string@{colored\_string}!colored\_string@{colored\_string}}
+\index{colored\_string@{colored\_string}!colored\_string@{colored\_string}}
+\subsubsection{\texorpdfstring{colored\_string()}{colored\_string()}}
+{\footnotesize\ttfamily colored\+\_\+string\+::colored\+\_\+string (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str,  }\item[{const \mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497}{Print\+Colors}}}]{foreground = {\ttfamily \mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497aa2d9547b5d3dd9f05984475f7c926da0}{Print\+Colors\+::\+R\+ED}}},  }\item[{const \mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497}{Print\+Colors}}}]{background = {\ttfamily \mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a08d0012388564e95c3b4a7407cf04965}{Print\+Colors\+::\+B\+L\+A\+CK}}} }\end{DoxyParamCaption})}
+
+
+
+Colored string\textquotesingle{}s constructor. This creates a new colored string ready to be printed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em str} & The normal string. \\
+\hline
+\mbox{\texttt{ in}}  & {\em foreground} & The foreground color \+\_\+(optional)\+\_\+. \\
+\hline
+\mbox{\texttt{ in}}  & {\em background} & The background color \+\_\+(optional)\+\_\+. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classcolored__string_a7a425cff7a8554e3612f1ccadb100117}\label{classcolored__string_a7a425cff7a8554e3612f1ccadb100117}} 
+\index{colored\_string@{colored\_string}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!colored\_string@{colored\_string}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classcolored__string}{colored\+\_\+string}} \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output the colored string. This outputs the colored string to a std\+::ostream (like {\ttfamily cout}). 
+
+\begin{DoxyNote}{Note}
+This function does {\itshape not} add a new line at the end of the output. 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em os} & The output stream. \\
+\hline
+\mbox{\texttt{ in}}  & {\em str} & The colored string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The modified output stream.
+\end{DoxyReturn}
+\subsection*{Example}
+
+The following line of code will print {\ttfamily \char`\"{}\+Hello World!\char`\"{}} (with an ending new line character) to the stdout. The string will be printed in {\itshape red}, using the color {\itshape blue} as background.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::cout << \mbox{\hyperlink{classcolored__string_a73b0c596b43789a0952dfcc9b56c301b}{colored\_string}}(\textcolor{stringliteral}{"Hello world!"},}
+\DoxyCodeLine{                 \mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497aa2d9547b5d3dd9f05984475f7c926da0}{colored\_string::PrintColors::RED}},}
+\DoxyCodeLine{                 \mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a1b3e1ee9bff86431dea6b181365ba65f}{colored\_string::PrintColors::BLUE}})}
+\DoxyCodeLine{          << std::endl;}
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+utilities/\mbox{\hyperlink{string__utilities_8h}{string\+\_\+utilities.\+h}}\item 
+utilities/string\+\_\+utilities.\+cpp\end{DoxyCompactItemize}
