@@ -15,6 +15,7 @@
 #include <limits>
 
 #include "utilities/string_utilities.h"
+#include "utilities/cryptography.h"
 
 /**
  * \brief Get a value in a range.

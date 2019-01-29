@@ -106,6 +106,7 @@ void game::get_strings()
 	while (!mInputFile.eof())
 	{
 		getline(mInputFile, mStrings[i]);
+		cryptography::decrypt(mStrings[i]);
 		mStrings[i] = regex_replace(mStrings[i], regex("\\\\n"), "\n\n");
 		i++;
 	}
@@ -116,6 +117,7 @@ void game::get_strings()
 	while (!mInputFile.eof())
 	{
 		getline(mInputFile, mStrings[i]);
+		cryptography::decrypt(mStrings[i]);
 		i++;
 	}
 

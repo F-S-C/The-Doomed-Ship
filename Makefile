@@ -1,6 +1,6 @@
 .PHONY: docs res
 
-all: | project compile res docs
+all: | project compile res
 
 
 project: 
@@ -12,4 +12,6 @@ docs:
 pdf: 
 	cd ./docs/pdf && $(MAKE)
 res:
-	xcopy res bin\\res /E /I /Y
+	python encrypt_files.py res bin
+preliminary:
+	pip3 install jinja2 Pygments colorama

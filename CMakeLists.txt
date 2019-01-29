@@ -9,6 +9,7 @@ set(SOURCES
    src/main.cpp
    src/game.cpp
    src/utilities/string_utilities.cpp
+   src/utilities/cryptography.cpp
 )
 
 add_executable(ship ${SOURCES})
