@@ -3,6 +3,7 @@ GENERATE_HTML           = NO
 GENERATE_XML            = YES
 XML_OUTPUT              = xml
 XML_PROGRAMLISTING      = NO
+PROJECT_BRIEF           = 
 
 ##! M_FAVICON               = ../docs/assets/images/Logo/Logo.ico
 ##! M_CLASS_TREE_EXPAND_LEVELS = 1

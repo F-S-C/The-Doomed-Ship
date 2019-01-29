@@ -2,7 +2,7 @@
 \label{string__utilities_8h}\index{utilities/string\_utilities.h@{utilities/string\_utilities.h}}
 
 
-Some utilities functions to be used with strings. This file contains the declaration of various useful functions that work on {\ttfamily std\+::string}.  
+Some utilities functions to be used with strings.  
 
 
 {\ttfamily \#include $<$list$>$}\newline
@@ -12,20 +12,22 @@ Some utilities functions to be used with strings. This file contains the declara
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classcolored__string}{colored\+\_\+string}}
-\begin{DoxyCompactList}\small\item\em A colored string This class allows to print a colored string to the stdout. This is a cross platform solution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A colored string. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 std\+::string \mbox{\hyperlink{string__utilities_8h_a551b01b53864aa203f852dc9039018fe}{center\+\_\+string}} (const std\+::string \&str, unsigned width=44u)
-\begin{DoxyCompactList}\small\item\em Center a string. Given a string, this functions centers it with spaces. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Center a string. \end{DoxyCompactList}\item 
 std\+::list$<$ std\+::string $>$ \mbox{\hyperlink{string__utilities_8h_aedfd18e2bdfdd9f6e026ff740384df47}{split\+\_\+string}} (const std\+::string \&str, const std\+::string \&delimiter=\char`\"{}\textbackslash{}n\char`\"{})
-\begin{DoxyCompactList}\small\item\em Split a string based on another string. This function, given a string, splits it in a list of strings based on a {\ttfamily delimiter} string. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Split a string based on another string. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{string__utilities_8h_a9b70655bc0d9056f4a1ad050a8e92e25}{wrap\+\_\+string}} (const std\+::string \&str, unsigned line\+\_\+width=44u, const std\+::string \&whitespace=\char`\"{} \textbackslash{}t\textbackslash{}r\char`\"{})
-\begin{DoxyCompactList}\small\item\em Wrap a string based on a maximum length. This function, given a string and a maximum linewidth, wraps it to get a better output format. The wrapping is based on a list of characters that will be considered whitespaces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Wrap a string based on a maximum length. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Some utilities functions to be used with strings. This file contains the declaration of various useful functions that work on {\ttfamily std\+::string}. 
+Some utilities functions to be used with strings. 
+
+This file contains the declaration of various useful functions that work on {\ttfamily std\+::string}.
 
 \begin{DoxyCopyright}{Copyright}
 G\+NU General Public License version 3. 
@@ -44,7 +46,9 @@ January 28, 2019.
 
 
 
-Center a string. Given a string, this functions centers it with spaces. 
+Center a string. 
+
+Given a string, this functions centers it with spaces.
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -64,7 +68,9 @@ The centered string with trailing spaces (both at the beginning and the ending).
 
 
 
-Split a string based on another string. This function, given a string, splits it in a list of strings based on a {\ttfamily delimiter} string. 
+Split a string based on another string. 
+
+This function, given a string, splits it in a list of strings based on a {\ttfamily delimiter} string.
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -84,7 +90,9 @@ A list of string. If the {\ttfamily delimiter} is {\itshape not} found in the {\
 
 
 
-Wrap a string based on a maximum length. This function, given a string and a maximum linewidth, wraps it to get a better output format. The wrapping is based on a list of characters that will be considered whitespaces. 
+Wrap a string based on a maximum length. 
+
+This function, given a string and a maximum linewidth, wraps it to get a better output format. The wrapping is based on a list of characters that will be considered whitespaces.
 
 
 \begin{DoxyParams}[1]{Parameters}

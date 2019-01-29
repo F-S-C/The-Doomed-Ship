@@ -1,5 +1,5 @@
 /*! 
- * \mainpage The Condemned Ship: an Adventure
+ * \mainpage The Doomed Ship: an Adventure
  * \image html Logo/Logo.png width=250px
  * \section intro_sec Introduction
  * 

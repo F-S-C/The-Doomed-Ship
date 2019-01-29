@@ -1,4 +1,4 @@
-<h1><img src="docs/assets/images/Logo/Logo.png" alt="App logo" align="left" width="50px" /> L'Astronave Condannata: un'avventura (2.0)</h1>
+<h1><img src="docs/assets/images/Logo/Logo.png" alt="App logo" align="left" width="50px" /> The Doomed Ship: an adventure (2.0)</h1>
 
 *Read this in other languages: [Italiano](/README.it.md).*
 
@@ -8,10 +8,10 @@
 
 - [The Plot](#the-plot)
 - [The Reasons Behind this Project](#the-reasons-behind-this-project)
-  - [Preface](#preface)
-  - [The Idea](#the-idea)
+	- [Preface](#preface)
+	- [The Idea](#the-idea)
 - [Copyright](#copyright)
-  - [GNU GPL v3](#gnu-gpl-v3)
+	- [GNU GPL v3](#gnu-gpl-v3)
 
 ## The Plot
 

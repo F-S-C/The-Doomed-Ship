@@ -1,7 +1,9 @@
 /**
  * \file game.h
  * \brief The main header of the project.
+ * 
  * This header contains the declaration of all the core functions of the game.
+ * 
  * \copyright GNU General Public License version 3.
  */
 
@@ -13,6 +15,7 @@
 
 /**
  * \brief The game.
+ * 
  * This class contains all the core functions of the game.
  * It's in this class that the main loop of the game can be found.
  */
@@ -27,6 +30,7 @@ class game
   protected:
 	/**
 	 * \brief An array of languages.
+	 *
 	 * This class is a wrapper for an array of languages. It is used
 	 * to check data types and avoid errors.
 	 */
@@ -45,8 +49,10 @@ class game
 	  public:
 		/**
 		 * \brief All the available languages.
+		 *
 		 * This enumerator is used to get a particular language by
 		 * a costant and is useful to make the code more readable.
+		 * 
 		 * \warning Do *not* modify the first and last values: this
 		 * enumerator is used to index an array.
 		 */
@@ -59,14 +65,18 @@ class game
 
 		/**
 		 * \brief Languages' array's constructor.
+		 *
 		 * This construct a new languages' array.
+		 * 
 		 * \param[in] pLang An array of languages.
 		 */
 		languages(const language (&pLang)[NUMBER_OF_AVAILABLE_LANGUAGES]) noexcept;
 
 		/**
 		 * \brief Get a language.
+		 * 
 		 * This gets a language using its code.
+		 * 
 		 * \param[in] lang The language's code. It 
 		 * must be one defined in the AvailableLanguages
 		 * enumerator.
@@ -78,7 +88,8 @@ class game
 	};
 
 	/**
-	 * @brief The main loop.
+	 * \brief The main loop.
+	 * 
 	 * This is the main loop of the game. In this loop,
 	 * all the user's input (regarding actions in the game)
 	 * and game events take place.
@@ -87,9 +98,11 @@ class game
 
 	/**
 	 * \brief All the game's strings' codes.
+	 
 	 * This enumerator is used to get the code associated
 	 * with a string. This allows to write a more readable
 	 * code.
+	 * 
 	 * \warning Do *not* modify the first and last values: this
 	 * enumerator is used to index an array.
 	 */
@@ -109,6 +122,7 @@ class game
 		LANGUAGE_SUBMENU_TITLE, ///< The title of the language selection sub-menu.
 		RES_STRING_NUMBER		///< A useful constant that indicates how many strings are being saved.
 	};
+
 	std::string mStrings[RES_STRING_NUMBER]; ///< The array containing all the game strings.
 
 	/// The object containing the array of languages.

@@ -2,7 +2,7 @@
 \label{utilities_8h}\index{utilities.h@{utilities.h}}
 
 
-Some utilities functions. This file contains the declaration and definition of various miscellaneous functions that are useful in various parts of the project.  
+Some utilities functions.  
 
 
 {\ttfamily \#include $<$iostream$>$}\newline
@@ -14,21 +14,25 @@ Some utilities functions. This file contains the declaration and definition of v
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename Input\+Type $>$ }\\Input\+Type \mbox{\hyperlink{utilities_8h_a9d210fea9961d019fda46a720fdd27ae}{get\+\_\+value\+\_\+in\+\_\+range}} (const Input\+Type \&min, const Input\+Type \&max, const std\+::string \&prompt, const std\+::string \&error)
-\begin{DoxyCompactList}\small\item\em Get a value in a range. Given a range, this functions prompt the user for an input. In case of error (if the inserted value isn\textquotesingle{}t in the range or other kind of errors that can set to true the {\ttfamily std\+::cin.\+fail()} flag), the user is asked to insert a new value. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get a value in a range. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{utilities_8h_a4953d1edcbbfc7e420c423ded1d5621a}\label{utilities_8h_a4953d1edcbbfc7e420c423ded1d5621a}} 
 void \mbox{\hyperlink{utilities_8h_a4953d1edcbbfc7e420c423ded1d5621a}{clear\+\_\+screen}} ()
 \begin{DoxyCompactList}\small\item\em Clear the screen. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{utilities_8h_aa59008ef7f8ac0f23073c5de4715b481}\label{utilities_8h_aa59008ef7f8ac0f23073c5de4715b481}} 
 void \mbox{\hyperlink{utilities_8h_aa59008ef7f8ac0f23073c5de4715b481}{press\+\_\+any\+\_\+key}} ()
-\begin{DoxyCompactList}\small\item\em Press any key. Prompts the user to press any key to continue and waits for a key press. The execution does {\itshape not} continue while this function is waiting for an input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Press any key. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Some utilities functions. This file contains the declaration and definition of various miscellaneous functions that are useful in various parts of the project. 
+Some utilities functions. 
+
+This file contains the declaration and definition of various miscellaneous functions that are useful in various parts of the project.
 
 \begin{DoxyCopyright}{Copyright}
 G\+NU General Public License version 3. 
 \end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+January 28, 2019 
+\end{DoxyDate}
 
 
 \subsection{Function Documentation}
@@ -41,7 +45,9 @@ Input\+Type get\+\_\+value\+\_\+in\+\_\+range (\begin{DoxyParamCaption}\item[{co
 
 
 
-Get a value in a range. Given a range, this functions prompt the user for an input. In case of error (if the inserted value isn\textquotesingle{}t in the range or other kind of errors that can set to true the {\ttfamily std\+::cin.\+fail()} flag), the user is asked to insert a new value. 
+Get a value in a range. 
+
+Given a range, this functions prompt the user for an input. In case of error (if the inserted value isn\textquotesingle{}t in the range or other kind of errors that can set to true the {\ttfamily std\+::cin.\+fail()} flag), the user is asked to insert a new value.
 
 
 \begin{DoxyTemplParams}{Template Parameters}
@@ -76,3 +82,14 @@ The inputed value that is in the range \mbox{[}{\ttfamily min}, {\ttfamily max}\
 \begin{DoxyPrecond}{Precondition}
 In order to use this function on all kinds of object, there must be an ovveride of the {\ttfamily operator $<$}, {\ttfamily operator $>$} and {\ttfamily operator $>$$>$ (std\+::istream\&, Input\+Type\&)}. 
 \end{DoxyPrecond}
+\mbox{\Hypertarget{utilities_8h_aa59008ef7f8ac0f23073c5de4715b481}\label{utilities_8h_aa59008ef7f8ac0f23073c5de4715b481}} 
+\index{utilities.h@{utilities.h}!press\_any\_key@{press\_any\_key}}
+\index{press\_any\_key@{press\_any\_key}!utilities.h@{utilities.h}}
+\subsubsection{\texorpdfstring{press\_any\_key()}{press\_any\_key()}}
+{\footnotesize\ttfamily void press\+\_\+any\+\_\+key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Press any key. 
+
+Prompts the user to press any key to continue and waits for a key press. The execution does {\itshape not} continue while this function is waiting for an input. 

@@ -1,6 +1,7 @@
 /**
  * \dir utilities
  * \brief Various utilities functions.
+ * 
  * This directory contains various files that implements
  * various utilities functions.
  * Each file is included in the utilities.h file, so you
@@ -9,8 +10,10 @@
 /** 
  * \file string_utilities.h
  * \brief Some utilities functions to be used with strings.
+ * 
  * This file contains the declaration of various useful functions
  * that work on `std::string`.
+ * 
  * \copyright GNU General Public License version 3.
  * \date January 28, 2019.
  */
@@ -24,7 +27,9 @@
 
 /**
  * \brief Center a string.
+ * 
  * Given a string, this functions centers it with spaces.
+ * 
  * \param[in] str The string to be centered.
  * \param[in] width The total width of the final string.
  * This is the total width on which the string has to be centered.
@@ -35,8 +40,10 @@ std::string center_string(const std::string &str, unsigned width = 44u);
 
 /**
  * \brief Split a string based on another string.
+ * 
  * This function, given a string, splits it in a list of strings
  * based on a `delimiter` string.
+ * 
  * \param[in] str The string to be splitted.
  * \param[in] delimiter The delimiter based on which the string has to be 
  * splitted (_optional_).
@@ -49,9 +56,11 @@ std::list<std::string> split_string(const std::string &str, const std::string &d
 
 /**
  * \brief Wrap a string based on a maximum length.
+ * 
  * This function, given a string and a maximum linewidth, wraps it to
  * get a better output format. The wrapping is based on a list of characters
  * that will be considered whitespaces.
+ * 
  * \param[in] str The string to be wrapped.
  * \param[in] line_width The maximum line width on which the string has to be wrapped (_optional_).
  * \param[in] whitespace The list of character that will be considered as whitespaces (_optional_).
@@ -61,6 +70,7 @@ std::string wrap_string(const std::string &str, unsigned line_width = 44u, const
 
 /**
  * \brief A colored string
+ * 
  * This class allows to print a colored string to the stdout.
  * This is a cross platform solution.
  */
@@ -69,9 +79,11 @@ class colored_string
   public:
 	/**
      * \brief Printable colors.
+  
      * This enumerator contains all the possible colors
      * that can be printed. Each color is identified
      * by an integer.
+	 * 
      * \warning The colors have various code based on the platform.
      * This is because some operative systems (like Windows) don't
      * support ASCII Escaped sequences.
@@ -101,7 +113,9 @@ class colored_string
 
 	/**
      * \brief Colored string's constructor.
+  
      * This creates a new colored string ready to be printed.
+	 * 
      * \param[in] str The normal string.
      * \param[in] foreground The foreground color (_optional_).
      * \param[in] background The background color (_optional_).
@@ -112,8 +126,11 @@ class colored_string
 
 	/**
      * \brief Output the colored string.
+  
      * This outputs the colored string to a std::ostream (like `cout`).
+	 * 
      * \note This function does _not_ add a new line at the end of the output.
+	 * 
      * \param[in] os The output stream.
      * \param[in] str The colored string.
      * \return The modified output stream.

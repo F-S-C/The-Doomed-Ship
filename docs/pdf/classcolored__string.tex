@@ -2,7 +2,7 @@
 \label{classcolored__string}\index{colored\_string@{colored\_string}}
 
 
-A colored string This class allows to print a colored string to the stdout. This is a cross platform solution.  
+A colored string.  
 
 
 
@@ -23,12 +23,12 @@ enum \mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497}{Pr
 \mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a344dd8cd533280795b9db82ef0c92749}{Print\+Colors\+::\+C\+Y\+AN}} = 6, 
 \mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497ab5bf627e448384cf3a4c35121ca6008d}{Print\+Colors\+::\+W\+H\+I\+TE}} = 7
  \}
-\begin{DoxyCompactList}\small\item\em Printable colors. This enumerator contains all the possible colors that can be printed. Each color is identified by an integer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Printable colors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classcolored__string_a73b0c596b43789a0952dfcc9b56c301b}{colored\+\_\+string}} (const std\+::string \&str, const \mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497}{Print\+Colors}} foreground=\mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497aa2d9547b5d3dd9f05984475f7c926da0}{Print\+Colors\+::\+R\+ED}}, const \mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497}{Print\+Colors}} background=\mbox{\hyperlink{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497a08d0012388564e95c3b4a7407cf04965}{Print\+Colors\+::\+B\+L\+A\+CK}})
-\begin{DoxyCompactList}\small\item\em Colored string\textquotesingle{}s constructor. This creates a new colored string ready to be printed. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Colored string\textquotesingle{}s constructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classcolored__string_a530408625112fe887b3fd5cf5965f03e}\label{classcolored__string_a530408625112fe887b3fd5cf5965f03e}} 
 {\bfseries operator std\+::string} () const
 \end{DoxyCompactItemize}
@@ -45,11 +45,13 @@ std\+::string {\bfseries m\+\_\+color}
 \begin{DoxyCompactItemize}
 \item 
 std\+::ostream \& \mbox{\hyperlink{classcolored__string_a7a425cff7a8554e3612f1ccadb100117}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classcolored__string}{colored\+\_\+string}} \&str)
-\begin{DoxyCompactList}\small\item\em Output the colored string. This outputs the colored string to a std\+::ostream (like {\ttfamily cout}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Output the colored string. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-A colored string This class allows to print a colored string to the stdout. This is a cross platform solution. 
+A colored string. 
+
+This class allows to print a colored string to the stdout. This is a cross platform solution. 
 
 \subsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497}\label{classcolored__string_a76416a7db18c947e5a6d5bf17c78e497}} 
@@ -60,7 +62,9 @@ A colored string This class allows to print a colored string to the stdout. This
 
 
 
-Printable colors. This enumerator contains all the possible colors that can be printed. Each color is identified by an integer. 
+Printable colors. 
+
+This enumerator contains all the possible colors that can be printed. Each color is identified by an integer.
 
 \begin{DoxyWarning}{Warning}
 The colors have various code based on the platform. This is because some operative systems (like Windows) don\textquotesingle{}t support A\+S\+C\+II Escaped sequences. 
@@ -110,7 +114,9 @@ W\+H\+I\+TE&The white color. \\
 
 
 
-Colored string\textquotesingle{}s constructor. This creates a new colored string ready to be printed. 
+Colored string\textquotesingle{}s constructor. 
+
+This creates a new colored string ready to be printed.
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -132,10 +138,12 @@ Colored string\textquotesingle{}s constructor. This creates a new colored string
 
 
 
-Output the colored string. This outputs the colored string to a std\+::ostream (like {\ttfamily cout}). 
+Output the colored string. 
+
+This outputs the colored string to a std\+::ostream (like {\ttfamily cout}).
 
 \begin{DoxyNote}{Note}
-This function does {\itshape not} add a new line at the end of the output. 
+This function does {\itshape not} add a new line at the end of the output.
 \end{DoxyNote}
 
 \begin{DoxyParams}[1]{Parameters}
