@@ -22,16 +22,27 @@ namespace cryptography
 	/**
 	 * \brief Decrypts a string.
 	 *
-	 * This function decrypts a string that was encrypted 
-	 * using the Caesar Cypher.
-	 * The string will be saved in the same object where the 
-	 * encrypted string is saved.
-	 * 
-	 * \param[in] str The original string that will be decrypted.
-	 * It's the same string where the result will be saved.
+	 * This function decrypts a string that was encrypted using the Caesar
+	 * Cypher. The string will be saved in the same object where the encrypted
+	 * string is saved.
+	 *
+	 * \param[in] str The original string that will be decrypted. It's the same
+	 * string where the result will be saved. 
 	 * \param[in] key The key that will be used to decrypt the string (_optional_).
 	 */
 	std::string& decrypt(std::string& str, int key = 5);
+
+	/**
+	 * \brief Encrypts a string.
+	 *
+	 * This function encrypts a string using the Caesar Cypher. The string will
+	 * be saved in the same object where the encrypted string is saved.
+	 *
+	 * \param[in] str The original string that will be encrypted. It's the same
+	 * string where the result will be saved. 
+	 * \param[in] key The key that will be used to decrypt the string (_optional_).
+	 */
+	std::string& encrypt(std::string& str, int key = 5);
 }
 
 #endif //_CRYPTO_H
