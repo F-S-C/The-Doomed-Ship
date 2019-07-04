@@ -1,15 +1,6 @@
-cmake_minimum_required(VERSION 3.13.3)
-project(Condemned_Ship)
-set(CMAKE_CXX_STANDARD 11)
+cmake_minimum_required(VERSION 3.14)
+project(The_Doomed_Ship)
 
-#Bring the headers, such as Student.h into the project
-include_directories(include)
+set(CMAKE_CXX_STANDARD 14)
 
-set(SOURCES
-   src/main.cpp
-   src/game.cpp
-   src/utilities/string_utilities.cpp
-   src/utilities/cryptography.cpp
-)
-
-add_executable(ship ${SOURCES})
+add_executable(The_Doomed_Ship src/main.cpp src/game.cpp src/game.h src/utilities.h src/utilities/cryptography.cpp src/utilities/cryptography.h src/utilities/string_utilities.cpp src/utilities/string_utilities.h)

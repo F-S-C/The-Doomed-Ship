@@ -10,14 +10,13 @@ author: Andrea Esposito
 
 import os
 import sys
-import string
 from colorama import init, Fore, Style
 
 
-def encrypt(text, key):
+def encrypt(original_text, encryption_key):
     result = ""
-    for i in range(len(text)):
-        result += chr(ord(text[i]) + key)
+    for i in range(len(original_text)):
+        result += chr(ord(original_text[i]) + encryption_key)
     return result
 
 
@@ -31,7 +30,7 @@ else:
     dest = sys.argv[2]
     key = 5
 
-    for path, subdirs, files in os.walk(root):
+    for path, subdirectories, files in os.walk(root):
         for name in files:
             data = open(os.path.join(path, name), "r")
             text = data.readlines()
