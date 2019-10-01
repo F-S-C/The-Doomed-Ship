@@ -2,7 +2,7 @@
 
 *Read this in other languages: [Italiano](/README.it.md).*
 
-"_L'Astronave Condannata: un'avventura_" is a game created by Enrico Colombini and Chiara Tovena, released as _freeware_ and modified (with the author's permission) by the team FSC, that has decided to revisit the original game from a modern point of view, realizing it using **C++**.
+"_L'Astronave Condannata: un'avventura_" is a game created by Enrico Colombini and Chiara Tovena, released as _freeware_ and modified (with the author's permission) by the team FSC, that has decided to revisit the original game from a modern point of view, realizing it using **Java**.
 
 <h2>Table of Contents</h2>
 
@@ -21,7 +21,7 @@ A sudden accident put your ship in danger. Only you can avert the impending disa
 
 ### Preface
 
-The team **F.S.C.** &mdash; _Five Student of Computer Science_ &mdash; has decided to revisit the original game in modern key, using the **C++** language and making it _cross plattform_.
+The team **F.S.C.** &mdash; _Five Student of Computer Science_ &mdash; has decided to revisit the original game in modern key, using the **Java** language and making it _cross plattform_.
 
 ### The Idea
 

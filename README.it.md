@@ -2,7 +2,7 @@
 
 *Leggi in altre lingue: [English](/README.md).*
 
-"_L'Astronave Condannata: un'avventura_" è un gioco creato da Enrico Colombini e Chiara Tovena, rilasciato come _freeware_ e modificata (col permesso dell'autore) dal team F.S.C., che ha deciso di rivisitare il gioco originale da un punto di vista moderno, realizzandolo in **C++**.
+"_L'Astronave Condannata: un'avventura_" è un gioco creato da Enrico Colombini e Chiara Tovena, rilasciato come _freeware_ e modificata (col permesso dell'autore) dal team F.S.C., che ha deciso di rivisitare il gioco originale da un punto di vista moderno, realizzandolo in **Java**.
 
 <h2>Indice</h2>
 
@@ -21,7 +21,7 @@ Un improvviso incidente mette in pericolo la tua astronave. Solo tu puoi scongiu
 
 ### Prefazione
 
-Il team **F.S.C.** &mdash; _Five Student of Computer Science_ &mdash; ha deciso di "rivisitare" il gioco originale in una chiave moderna mediante l'utilizzo del linguaggio **C++** e rendendolo _cross platform_.
+Il team **F.S.C.** &mdash; _Five Student of Computer Science_ &mdash; ha deciso di "rivisitare" il gioco originale in una chiave moderna mediante l'utilizzo del linguaggio **Java** e rendendolo _cross platform_.
 
 ### L'idea
 
