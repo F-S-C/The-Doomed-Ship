@@ -44,7 +44,6 @@ class Console:
             self.__screen.erase()
             if title is not None:
                 self.println(title)
-            self.__screen.addstr("What is your class?\n", curses.A_UNDERLINE)
             for i in range(len(options)):
                 if i == option:
                     attr = curses.color_pair(2)
@@ -52,6 +51,7 @@ class Console:
                     attr = curses.color_pair(1)
                 self.__screen.addstr(f"{i + 1}. {options[i]}\n", attr)
 
+            # self.__screen.addstr("Your choice:\n", curses.A_UNDERLINE)
             c = self.__screen.getch()
 
             if c == 3: raise KeyboardInterrupt
